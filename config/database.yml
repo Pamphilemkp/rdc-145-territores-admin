@@ -17,6 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  host: localhost
+  username: postgres
+  password: 121306
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -78,6 +81,12 @@ test:
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
+
+# rails g scaffold Participant full_name:string phone:string address:text proffession:string investment_idea:text impact_of_idea:string sector_of_investment:string  proffessional_experience:string summary_of_project:text province_of_interest:string --no-helper --no-assets --no-controller-specs --no-view-specs --no-jbuilder --no-fixture
+
+# rails g scaffold Sponsor first_name:string last_name:string phone:string address:text country_of_residence:string reason_of_sponsorship:text type_of_sponsorship_offering:string feedback:string --no-helper --no-assets --no-controller-specs --no-view-specs --no-jbuilder --no-fixture
+
+# rails g scaffold User first_name:string last_name:string photo:binary address:text phone:string --no-helper --no-assets --no-controller-specs --no-view-specs --no-jbuilder --no-fixture
 #
 production:
   <<: *default
