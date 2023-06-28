@@ -1,0 +1,57 @@
+<%= form_with(model: sponsor) do |form| %>
+  <% if sponsor.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(sponsor.errors.count, "error") %> prohibited this sponsor from being saved:</h2>
+
+      <ul>
+        <% sponsor.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_area :address %>
+  </div>
+
+  <div>
+    <%= form.label :country_of_residence, style: "display: block" %>
+    <%= form.text_field :country_of_residence %>
+  </div>
+
+  <div>
+    <%= form.label :reason_of_sponsorship, style: "display: block" %>
+    <%= form.text_area :reason_of_sponsorship %>
+  </div>
+
+  <div>
+    <%= form.label :type_of_sponsorship_offering, style: "display: block" %>
+    <%= form.text_field :type_of_sponsorship_offering %>
+  </div>
+
+  <div>
+    <%= form.label :feedback, style: "display: block" %>
+    <%= form.text_field :feedback %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
