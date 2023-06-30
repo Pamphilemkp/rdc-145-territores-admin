@@ -10,8 +10,22 @@ module Rdc145TerritoresAdmin
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.action_controller.default_protect_from_forgery = false
 
     # Configuration for the application, engines, and railties goes here.
+    config.middleware.use ActionDispatch::Flash
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'http://localhost:3000' # Replace with the actual origin of your React application
+    
+        resource '*',
+          headers: :any,
+          methods: [:get, :post, :put, :patch, :delete, :options],
+          credentials: true
+      end
+    end
+    
+
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
