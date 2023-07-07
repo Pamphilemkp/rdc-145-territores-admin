@@ -6,3 +6,75 @@
  *
  *= require_tree .
 */
+.app-sidebar-title img {
+    width: 25%;
+    /* height: 30%; */
+    border-radius: 50%;
+    /* Add any additional styles as needed */
+  }
+  
+
+  .app-sidebar-title .title-large {
+    font-size: x-small;
+    color: red;
+  }
+  
+  .table-container .trestle-table tbody tr:nth-child(even) {
+    background-color: #343a40;
+    color: #fff;
+  }
+
+  .table-container .trestle-table tbody tr:nth-child(odd) {
+    background-color: rgb(197, 222, 232, 13%);
+  }
+
+  .table-container .trestle-table  tr th:nth-child(even) {
+    background-color: #5882ca;
+    color: #fff;
+  }
+
+  .btn-new-resource {
+    background-color: #4d6bb2;
+  }
+
+  .login-form input{
+    background-color: #4d6bb2;
+  }
+
+  .login-form .form-group .input-group, .login-form .form-group .input-group input{
+    background-color: #4d6bb2;
+  }
+
+
+  .login-form .remember-me .custom-control-label {
+    background: rgba(0,0,0,.075);
+    border-radius: 0.25rem;
+    color: hsl(0deg 5.67% 40.67% / 75%);
+    cursor: pointer;
+    display: block;
+    padding: 0.75em 1.5em 0.75em 3.25em;
+}
+
+
+  .auth-header img {
+    max-height: 80%;
+    max-width: 80%;
+    border-radius: 50%;
+}
+
+.theme-bg-dark {
+    background-color: #fff;
+}
+
+.auth-body .container {
+    margin: auto;
+    width: 320px;
+    
+  background: #e9cc6f;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#user_email, #user_password {
+    background-color: #4d6bb2;
+}

@@ -5,3 +5,12 @@
 // within individual partials and `require` them here.
 //
 //  e.g. //= require "trestle/custom/my_custom_js"
+
+document.addEventListener("DOMContentLoaded", function() {
+    var loginForm = document.querySelector(".login-form"); // Replace "#login-form" with the appropriate selector for your login form
+  
+    if (loginForm) {
+      loginForm.reset();
+    }
+  });
+  
