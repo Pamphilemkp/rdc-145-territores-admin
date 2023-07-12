@@ -75,4 +75,3 @@ end
 gem 'rack-cors'
 gem 'trestle'
 gem 'trestle-auth'
-
