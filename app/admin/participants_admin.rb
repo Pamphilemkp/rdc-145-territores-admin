@@ -1,6 +1,6 @@
 Trestle.resource(:participants) do
   menu do
-    item :participants, icon: "fa fa-star"
+    item :participants, icon: "fa fa-users"
   end
 
   # Customize the table columns shown on the index view.

@@ -74,7 +74,5 @@ end
 
 gem 'rack-cors'
 gem 'trestle'
-gem 'trestle-auth'
-gem "devise", "~> 4.9"
-# gem 'bcrypt', '~> 3.1.16'
+# gem 'trestle-auth'
 

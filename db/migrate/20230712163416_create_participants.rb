@@ -1,8 +1,8 @@
 class CreateParticipants < ActiveRecord::Migration[7.0]
   def change
     create_table :participants do |t|
-      t.string :full_name
-      t.string :phone
+      t.string :first_name
+      t.string :last_name
       t.text :address
       t.string :proffession
       t.text :investment_idea

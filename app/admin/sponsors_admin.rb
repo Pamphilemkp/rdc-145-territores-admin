@@ -1,6 +1,6 @@
 Trestle.resource(:sponsors) do
   menu do
-    item :sponsors, icon: "fa fa-star"
+    item :sponsors, icon: "fa fa-users"
   end
 
   # Customize the table columns shown on the index view.
