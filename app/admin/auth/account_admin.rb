@@ -3,11 +3,7 @@ Trestle.resource(:account, model: User, scope: Auth, singular: true) do
     current_user
   end
 
-<<<<<<< HEAD
   remove_action :new, :edit, :destroy
-=======
-  remove_action :edit, :destroy
->>>>>>> main
 
   form do |user|
     text_field :email
