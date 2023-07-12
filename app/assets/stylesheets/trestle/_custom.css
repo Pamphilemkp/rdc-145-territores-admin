@@ -6,12 +6,15 @@
  *
  *= require_tree .
 */
-.app-sidebar-title img {
-    width: 25%;
-    /* height: 30%; */
-    border-radius: 50%;
-    /* Add any additional styles as needed */
-  }
+/* This file may be used for providing additional customizations to the Trestle
+ * admin. It will be automatically included within all admin pages.
+ *
+ * For organizational purposes, you may wish to define your customizations
+ * within individual partials in this folder and they'll be required below.
+ *
+ *= require_tree .
+*/
+
   
 
   .app-sidebar-title .title-large {
@@ -37,9 +40,9 @@
     background-color: #4d6bb2;
   }
 
-  .login-form input{
+  /* .login-form input{
     background-color: #4d6bb2;
-  }
+  } */
 
   .login-form .form-group .input-group, .login-form .form-group .input-group input{
     background-color: #4d6bb2;
@@ -77,4 +80,14 @@
 
 #user_email, #user_password {
     background-color: #4d6bb2;
+}  
+
+
+.login-form .form-group .input-group, .login-form .form-group .input-group input {
+    background-color: #4d6bb2;
+}
+
+#user_email, #user_password {
+     background-color: #4d6bb2;
+     color: #ffffff;
 }

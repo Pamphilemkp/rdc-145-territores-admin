@@ -1,0 +1,47 @@
+<%= form_with(model: province) do |form| %>
+  <% if province.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(province.errors.count, "error") %> prohibited this province from being saved:</h2>
+
+      <ul>
+        <% province.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :chef_lieu, style: "display: block" %>
+    <%= form.text_field :chef_lieu %>
+  </div>
+
+  <div>
+    <%= form.label :langues, style: "display: block" %>
+    <%= form.text_area :langues %>
+  </div>
+
+  <div>
+    <%= form.label :superficie, style: "display: block" %>
+    <%= form.text_field :superficie %>
+  </div>
+
+  <div>
+    <%= form.label :territoires, style: "display: block" %>
+    <%= form.text_area :territoires %>
+  </div>
+
+  <div>
+    <%= form.label :map, style: "display: block" %>
+    <%= form.text_field :map %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

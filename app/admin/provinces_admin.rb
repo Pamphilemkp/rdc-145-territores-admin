@@ -1,6 +1,6 @@
-Trestle.resource(:sponsors) do
+Trestle.resource(:provinces) do
   menu do
-    item :sponsors, icon: "fa fa-star"
+    item :provinces, icon: "fa fa-map"
   end
 
   # Customize the table columns shown on the index view.
@@ -13,7 +13,7 @@ Trestle.resource(:sponsors) do
 
   # Customize the form fields shown on the new/edit views.
   #
-  # form do |sponsor|
+  # form do |province|
   #   text_field :name
   #
   #   row do
@@ -30,6 +30,6 @@ Trestle.resource(:sponsors) do
   #   http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
   #
   # params do |params|
-  #   params.require(:sponsor).permit(:name, ...)
+  #   params.require(:province).permit(:name, ...)
   # end
 end

@@ -3,31 +3,31 @@ Trestle.configure do |config|
   #
   # Set the page title shown in the main header within the admin.
   #
-  config.site_title = "RDC - 145 Territores Admin"
+  config.site_title = "Rdc145 Territores Admin"
 
   # Specify a custom image to be used in place of the site title for mobile and
   # expanded/desktop navigation. These images should be placed within your
   # asset paths, e.g. app/assets/images.
   #
-  config.site_logo = "OKAPIRARES.jpg"
+   config.site_logo = "OKAPIRARES.jpg"
 
   # Specify a custom image to be used for the collapsed/tablet navigation.
   #
- # config.site_logo_small = "OKAPIRARES.jpg"
+  # config.site_logo_small = "logo-small.png"
 
   # Specify a favicon to be used within the admin.
   #
-  #config.favicon = "favicon.ico"
+  # config.favicon = "favicon.ico"
 
   # Set the text shown in the page footer within the admin.
   # Defaults to 'Powered by Trestle'.
   #
-  config.footer = "Built by Pamphile MKP"
+   config.footer = "Built BY Pamphile MKP"
 
   # Sets the default precision for timestamps (either :minutes or :seconds).
   # Defaults to :minutes.
   #
-   config.timestamp_precision = :minutes
+  # config.timestamp_precision = :minutes
 
   # == Mounting Options
   #
@@ -50,20 +50,20 @@ Trestle.configure do |config|
   # Set the initial breadcrumbs to display in the breadcrumb trail.
   # Defaults to a breadcrumb labeled 'Home' linking to to the application root.
   #
-  #  config.root_breadcrumbs = -> { [Trestle::Breadcrumb.new("Home", Trestle.config.root)] }
+  # config.root_breadcrumbs = -> { [Trestle::Breadcrumb.new("Home", Trestle.config.root)] }
 
   # Set the default icon class to use when it is not explicitly provided.
   # Defaults to "fa fa-arrow-circle-o-right".
   #
-  config.default_navigation_icon = "fa fa-arrow-circle-o-right"
+  # config.default_navigation_icon = "fa fa-arrow-circle-o-right"
 
   # Add an explicit menu block to be added to the admin navigation.
   #
-  config.menu do
-    group "Provinces et territoires" do
-      item "Territoires", "/admin/", icon: "fa fa-map", badge: { text: "NEW!", class: "label-success" }, priority: :first
-    end
-  end
+  # config.menu do
+  #   group "Custom Group" do
+  #     item "Custom Link", "/admin/custom", icon: "fa fa-car", badge: { text: "NEW!", class: "label-success" }, priority: :first
+  #   end
+  # end
 
   # == Extension Options
   #
@@ -107,7 +107,7 @@ Trestle.configure do |config|
   # List of methods to try calling on an instance when displayed by the `display` helper.
   # Defaults to [:display_name, :full_name, :name, :title, :username, :login, :email].
   #
-   config.display_methods.unshift(:admin_label)
+  config.display_methods.unshift(:admin_label)
 
   # Customize the default adapter class used by all admin resources.
   # See the documentation on Trestle::Adapters::Adapter for details on
@@ -131,6 +131,15 @@ Trestle.configure do |config|
   # Enable debugging of form errors. Defaults to true in development mode.
   #
   # config.debug_form_errors = true
+  # config.before_action do |controller|
+  #   authenticate_or_request_with_http_basic(Trestle.config.site_title) do |name, password|
+  #     ActiveSupport::SecurityUtils.secure_compare(name.to_s, Rails.application.secrets.trestle_login.to_s) &
+  #       ActiveSupport::SecurityUtils.secure_compare(password.to_s, Rails.application.secrets.trestle_password.to_s)
+  #   end
+  # end
+  
+  
+  
 
   # == Authentication Options
   #
@@ -179,9 +188,9 @@ Trestle.configure do |config|
   # Defaults to the user's #first_name and #last_name (last name in bold),
   # with a fallback to `display(user)` if those methods aren't defined.
   #
-  config.auth.format_user_name = ->(user) {
-    content_tag(:strong, user.first_name)
-  }
+  # config.auth.format_user_name = ->(user) {
+  #   content_tag(:strong, user.full_name)
+  # }
 
   # Customize the method for determining the user's locale.
   # Defaults to user.locale (if the method is defined).
@@ -232,7 +241,7 @@ Trestle.configure do |config|
 
   # Specify remember me expiration time. Defaults to 2 weeks.
   #
-  # config.auth.remember.for = 30.minutes
+  # config.auth.remember.for = 30.days
 
   # Customize the method for authenticating a user given a remember token.
   #

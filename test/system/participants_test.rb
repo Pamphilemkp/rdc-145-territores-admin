@@ -15,10 +15,10 @@ class ParticipantsTest < ApplicationSystemTestCase
     click_on "New participant"
 
     fill_in "Address", with: @participant.address
-    fill_in "Full name", with: @participant.full_name
+    fill_in "First name", with: @participant.first_name
     fill_in "Impact of idea", with: @participant.impact_of_idea
     fill_in "Investment idea", with: @participant.investment_idea
-    fill_in "Phone", with: @participant.phone
+    fill_in "Last name", with: @participant.last_name
     fill_in "Proffession", with: @participant.proffession
     fill_in "Proffessional experience", with: @participant.proffessional_experience
     fill_in "Province of interest", with: @participant.province_of_interest
@@ -35,10 +35,10 @@ class ParticipantsTest < ApplicationSystemTestCase
     click_on "Edit this participant", match: :first
 
     fill_in "Address", with: @participant.address
-    fill_in "Full name", with: @participant.full_name
+    fill_in "First name", with: @participant.first_name
     fill_in "Impact of idea", with: @participant.impact_of_idea
     fill_in "Investment idea", with: @participant.investment_idea
-    fill_in "Phone", with: @participant.phone
+    fill_in "Last name", with: @participant.last_name
     fill_in "Proffession", with: @participant.proffession
     fill_in "Proffessional experience", with: @participant.proffessional_experience
     fill_in "Province of interest", with: @participant.province_of_interest

@@ -17,7 +17,7 @@ class ParticipantsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create participant" do
     assert_difference("Participant.count") do
-      post participants_url, params: { participant: { address: @participant.address, full_name: @participant.full_name, impact_of_idea: @participant.impact_of_idea, investment_idea: @participant.investment_idea, phone: @participant.phone, proffession: @participant.proffession, proffessional_experience: @participant.proffessional_experience, province_of_interest: @participant.province_of_interest, sector_of_investment: @participant.sector_of_investment, summary_of_project: @participant.summary_of_project } }
+      post participants_url, params: { participant: { address: @participant.address, first_name: @participant.first_name, impact_of_idea: @participant.impact_of_idea, investment_idea: @participant.investment_idea, last_name: @participant.last_name, proffession: @participant.proffession, proffessional_experience: @participant.proffessional_experience, province_of_interest: @participant.province_of_interest, sector_of_investment: @participant.sector_of_investment, summary_of_project: @participant.summary_of_project } }
     end
 
     assert_redirected_to participant_url(Participant.last)
@@ -34,7 +34,7 @@ class ParticipantsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update participant" do
-    patch participant_url(@participant), params: { participant: { address: @participant.address, full_name: @participant.full_name, impact_of_idea: @participant.impact_of_idea, investment_idea: @participant.investment_idea, phone: @participant.phone, proffession: @participant.proffession, proffessional_experience: @participant.proffessional_experience, province_of_interest: @participant.province_of_interest, sector_of_investment: @participant.sector_of_investment, summary_of_project: @participant.summary_of_project } }
+    patch participant_url(@participant), params: { participant: { address: @participant.address, first_name: @participant.first_name, impact_of_idea: @participant.impact_of_idea, investment_idea: @participant.investment_idea, last_name: @participant.last_name, proffession: @participant.proffession, proffessional_experience: @participant.proffessional_experience, province_of_interest: @participant.province_of_interest, sector_of_investment: @participant.sector_of_investment, summary_of_project: @participant.summary_of_project } }
     assert_redirected_to participant_url(@participant)
   end
 

@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_06_130354) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_12_183915) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "participants", force: :cascade do |t|
-    t.string "phone"
+    t.string "first_name"
+    t.string "last_name"
     t.text "address"
     t.string "proffession"
     t.text "investment_idea"
@@ -26,15 +27,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_130354) do
     t.string "province_of_interest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "last_name"
-    t.string "email"
-    t.string "first_name"
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "provinces", force: :cascade do |t|
     t.string "name"
-    t.string "title"
-    t.text "content"
+    t.string "chef_lieu"
+    t.text "langues"
+    t.string "superficie"
+    t.text "territoires"
+    t.string "map"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,7 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_130354) do
     t.string "feedback"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "email"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,16 +61,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_130354) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
     t.string "password_digest"
-    t.string "remember_token"
-    t.datetime "remember_token_expires_at"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.string "email"
   end
 
 end

@@ -82,12 +82,14 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 
-# rails g scaffold Participant full_name:string phone:string address:text proffession:string investment_idea:text impact_of_idea:string sector_of_investment:string  proffessional_experience:string summary_of_project:text province_of_interest:string --no-helper --no-assets --no-controller-specs --no-view-specs --no-jbuilder --no-fixture
+# rails g scaffold Participant first_name:string last_name:string address:text proffession:string investment_idea:text impact_of_idea:string sector_of_investment:string  proffessional_experience:string summary_of_project:text province_of_interest:string --no-helper --no-assets --no-controller-specs --no-view-specs --no-jbuilder --no-fixture
 
 # rails g scaffold Sponsor first_name:string last_name:string phone:string address:text country_of_residence:string reason_of_sponsorship:text type_of_sponsorship_offering:string feedback:string --no-helper --no-assets --no-controller-specs --no-view-specs --no-jbuilder --no-fixture
 
 # rails g scaffold User first_name:string last_name:string photo:binary address:text phone:string --no-helper --no-assets --no-controller-specs --no-view-specs --no-jbuilder --no-fixture
-#
+
+# rails g scaffold Province name:string chef_lieu:string langues:text superficie:string territoires:text map:string --no-helper --no-assets --no-controller-specs --no-view-specs --no-jbuilder --no-fixture
+
 production:
   <<: *default
   database: rdc_145_territores_admin_production

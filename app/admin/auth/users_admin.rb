@@ -14,7 +14,10 @@ Trestle.resource(:users, model: User, scope: Auth) do
     column :last_name
     actions do |a|
       a.delete unless a.instance == current_user
+<<<<<<< HEAD
+=======
       a.edit unless a.instance == current_user
+>>>>>>> main
     end
   end
 
