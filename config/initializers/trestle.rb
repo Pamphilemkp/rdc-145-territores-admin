@@ -9,7 +9,7 @@ Trestle.configure do |config|
   # expanded/desktop navigation. These images should be placed within your
   # asset paths, e.g. app/assets/images.
   #
-   config.site_logo = "OKAPIRARES.jpg"
+   config.site_logo = "okapirare.jpg"
 
   # Specify a custom image to be used for the collapsed/tablet navigation.
   #
