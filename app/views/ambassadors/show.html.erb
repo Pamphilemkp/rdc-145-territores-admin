@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @ambassador %>
+
+<div>
+  <%= link_to "Edit this ambassador", edit_ambassador_path(@ambassador) %> |
+  <%= link_to "Back to ambassadors", ambassadors_path %>
+
+  <%= button_to "Destroy this ambassador", @ambassador, method: :delete %>
+</div>

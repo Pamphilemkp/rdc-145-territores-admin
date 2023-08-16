@@ -1,0 +1,72 @@
+<%= form_with(model: ambassador) do |form| %>
+  <% if ambassador.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(ambassador.errors.count, "error") %> prohibited this ambassador from being saved:</h2>
+
+      <ul>
+        <% ambassador.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_area :address %>
+  </div>
+
+  <div>
+    <%= form.label :citizenship, style: "display: block" %>
+    <%= form.text_field :citizenship %>
+  </div>
+
+  <div>
+    <%= form.label :presentation, style: "display: block" %>
+    <%= form.text_field :presentation %>
+  </div>
+
+  <div>
+    <%= form.label :position, style: "display: block" %>
+    <%= form.text_field :position %>
+  </div>
+
+  <div>
+    <%= form.label :comment, style: "display: block" %>
+    <%= form.text_area :comment %>
+  </div>
+
+  <div>
+    <%= form.label :reason_of_choice, style: "display: block" %>
+    <%= form.text_field :reason_of_choice %>
+  </div>
+
+  <div>
+    <%= form.label :territoire, style: "display: block" %>
+    <%= form.text_field :territoire %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

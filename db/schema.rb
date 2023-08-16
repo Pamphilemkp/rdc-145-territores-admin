@@ -10,9 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_12_183915) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_16_151909) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ambassadors", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "phone"
+    t.text "address"
+    t.string "citizenship"
+    t.string "presentation"
+    t.string "position"
+    t.text "comment"
+    t.string "reason_of_choice"
+    t.string "territoire"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "participants", force: :cascade do |t|
     t.string "first_name"

@@ -1,11 +1,11 @@
-Trestle.resource(:account, model: User, scope: Auth, singular: true) do
+Trestle.resource(:account, model: Ambassador, scope: Auth, singular: true) do
   instance do
     current_user
   end
 
   remove_action :new, :edit, :destroy
 
-  form do |user|
+  form do |ambassador|
     text_field :email
 
     row do
