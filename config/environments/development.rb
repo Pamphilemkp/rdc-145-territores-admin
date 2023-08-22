@@ -2,6 +2,28 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+    config.action_mailer.delivery_method = :smtp
+  #   config.action_mailer.smtp_settings = {
+  #   address: 'sandbox.smtp.mailtrap.io',
+  #   port: 587,
+  #   domain: 'https://students-attendance-tracking.herokuapp.com/',
+  #   user_name: '29ea74b2d6760d',
+  #   password: 'd7b55482da73e8',
+  #   authentication: :plain, # First authentication method
+  #   auth_methods: [:plain, :login, :cram_md5],
+  #   enable_starttls_auto: true,
+  #   openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE
+  # }
+
+  config.action_mailer.smtp_settings = {
+    address: Rails.application.credentials.smtp[:address],
+    port: 587,
+    domain: Rails.application.credentials.smtp[:development][:domain],
+    user_name: Rails.application.credentials.smtp[:user_name],
+    password: Rails.application.credentials.smtp[:password],
+    enable_starttls_auto: true,
+    openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE
+  }
 
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development

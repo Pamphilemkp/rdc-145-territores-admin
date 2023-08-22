@@ -2,7 +2,16 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: Rails.application.credentials.smtp[:adress],
+    port: 587,
+    domain: Rails.application.credentials.smtp[:development][:domain],
+    user_name: Rails.application.credentials.smtp[:user_name],
+    password: Rails.application.credentials.smtp[:password],
+    enable_starttls_auto: true,
+    openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE
+  }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
