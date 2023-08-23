@@ -4,7 +4,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: Rails.application.credentials.smtp[:adress],
+    address: Rails.application.credentials.smtp[:address],
     port: 587,
     domain: Rails.application.credentials.smtp[:development][:domain],
     user_name: Rails.application.credentials.smtp[:user_name],
