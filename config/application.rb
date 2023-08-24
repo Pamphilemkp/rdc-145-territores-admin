@@ -16,7 +16,7 @@ module Rdc145TerritoresAdmin
     config.middleware.use ActionDispatch::Flash
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'http://localhost:3000' # Replace with the actual origin of your React application
+        origins 'https://rdc145territoires.com' # Replace with the actual origin of your React application
     
         resource '*',
           headers: :any,
