@@ -6,7 +6,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: Rails.application.credentials.smtp[:address],
     port: 587,
-    domain: Rails.application.credentials.smtp[:development][:domain],
+    domain: Rails.application.credentials.smtp[:production][:domain],
     user_name: Rails.application.credentials.smtp[:user_name],
     password: Rails.application.credentials.smtp[:password],
     enable_starttls_auto: true,
