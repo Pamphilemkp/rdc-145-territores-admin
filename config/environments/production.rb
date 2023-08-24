@@ -2,7 +2,16 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: Rails.application.credentials.smtp[:address],
+    port: 587,
+    domain: Rails.application.credentials.smtp[:production][:domain],
+    user_name: Rails.application.credentials.smtp[:user_name],
+    password: Rails.application.credentials.smtp[:password],
+    enable_starttls_auto: true,
+    openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE
+  }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -62,11 +71,11 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "rdc_145_territores_admin_production"
 
-  config.action_mailer.perform_caching = false
+  config.action_mailer.perform_caching = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+   config.action_mailer.raise_delivery_errors = true
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
@@ -90,4 +99,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_options = {from: 'pamphilemkp@gmail.com'}
 end

@@ -25,6 +25,7 @@ class AmbassadorsController < ApplicationController
 
     respond_to do |format|
       if @ambassador.save
+        AmbassadorMailer.send_confirmation_email(@ambassador).deliver_now
         format.html { redirect_to ambassador_url(@ambassador), notice: "Ambassador was successfully created." }
         format.json { render :show, status: :created, location: @ambassador }
       else
