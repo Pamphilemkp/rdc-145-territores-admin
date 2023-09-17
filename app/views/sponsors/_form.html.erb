@@ -1,6 +1,22 @@
-<%= form_with(model: sponsor) do |form| %>
+<style>
+  .form-control {
+    font-family: 'ubuntu', sans-serif;
+  }
+
+  .form-label{
+    font-family: 'ubuntu', sans-serif;
+    font-weight: bold; 
+  }
+  h1{
+    font-family: 'ubuntu', sans-serif;
+    font-weight: bold; 
+  }
+
+</style>
+<div class="container my-2">
+<%= form_with(model: sponsor, class: "my-2") do |form| %>
   <% if sponsor.errors.any? %>
-    <div style="color: red">
+    <div class="alert alert-danger">
       <h2><%= pluralize(sponsor.errors.count, "error") %> prohibited this sponsor from being saved:</h2>
 
       <ul>
@@ -10,48 +26,52 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
+  <div class="mt-1">
+  <div class="mb-3">
+    <%= form.label :first_name, class: "form-label" %>
+    <%= form.text_field :first_name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :last_name, style: "display: block" %>
-    <%= form.text_field :last_name %>
+  <div class="mb-3">
+    <%= form.label :last_name, class: "form-label" %>
+    <%= form.text_field :last_name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
+  <div class="mb-3">
+    <%= form.label :phone, class: "form-label" %>
+    <%= form.text_field :phone, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :address, style: "display: block" %>
-    <%= form.text_area :address %>
+  <div class="mb-3">
+    <%= form.label :address, class: "form-label" %>
+    <%= form.text_area :address, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :country_of_residence, style: "display: block" %>
-    <%= form.text_field :country_of_residence %>
+  <div class="mb-3">
+    <%= form.label :country_of_residence, class: "form-label" %>
+    <%= form.text_field :country_of_residence, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :reason_of_sponsorship, style: "display: block" %>
-    <%= form.text_area :reason_of_sponsorship %>
+  <div class="mb-3">
+    <%= form.label :reason_of_sponsorship, class: "form-label" %>
+    <%= form.text_area :reason_of_sponsorship, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :type_of_sponsorship_offering, style: "display: block" %>
-    <%= form.text_field :type_of_sponsorship_offering %>
+  <div class="mb-3">
+    <%= form.label :type_of_sponsorship_offering, class: "form-label" %>
+    <%= form.text_field :type_of_sponsorship_offering, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :feedback, style: "display: block" %>
-    <%= form.text_field :feedback %>
+  <div class="mb-3">
+    <%= form.label :feedback, class: "form-label" %>
+    <%= form.text_field :feedback, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class=" submit-font mt-3 ">
+    <%= form.submit "Submit", class: "btn btn-secondary float-end" %>
   </div>
 <% end %>
+</div>
+
+
+</div>

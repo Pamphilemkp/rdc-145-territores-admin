@@ -1,9 +1,12 @@
-<h1>New sponsor</h1>
 
-<%= render "form", sponsor: @sponsor %>
-
-<br>
-
-<div>
-  <%= link_to "Back to sponsors", sponsors_path %>
+<div class="d-flex flex-column gap-2   container">
+  <div>
+      <h1>New Sponsor</h1>
+  </div>
+  <div class="d-flex justify-content-end">
+   <%= link_to "Back to sponsors", sponsors_path, class: "btn btn-secondary custom-button"%>
+  </div>
+  <div>
+     <%= render "form", sponsor: @sponsor %>
+  </div>
 </div>

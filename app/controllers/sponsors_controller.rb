@@ -8,6 +8,7 @@ class SponsorsController < ApplicationController
 
   # GET /sponsors/1 or /sponsors/1.json
   def show
+   
   end
 
   # GET /sponsors/new

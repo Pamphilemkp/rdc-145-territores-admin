@@ -1,14 +1,21 @@
 <p style="color: green"><%= notice %></p>
+<div class="container">
+<div class="d-flex flex-column gap-2 ">
+  <div class="d-flex flex-column gap-4">
+   <div >
+    <h1 class="sponsor-head position-absolute top-0 mt-5 " >Provinces</h1>
+   </div>
+   <div class="d-flex justify-content-end">
+    <%= link_to "New Province", new_province_path , class: "btn btn-secondary custom-button"%>
+  </div>
+  </div>
 
-<h1>Provinces</h1>
-
+</div>
 <div id="provinces">
   <% @provinces.each do |province| %>
     <%= render province %>
-    <p>
-      <%= link_to "Show this province", province %>
-    </p>
   <% end %>
 </div>
 
-<%= link_to "New province", new_province_path %>
+
+

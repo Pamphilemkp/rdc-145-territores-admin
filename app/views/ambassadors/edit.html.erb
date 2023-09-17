@@ -1,10 +1,15 @@
-<h1>Editing ambassador</h1>
-
-<%= render "form", ambassador: @ambassador %>
-
-<br>
-
-<div>
-  <%= link_to "Show this ambassador", @ambassador %> |
-  <%= link_to "Back to ambassadors", ambassadors_path %>
+<div class="container d-flex flex-column gap-2">
+<div >
+  <h1 >Editing Ambassador</h1>
 </div>
+  <div class="d-flex justify-content-end">
+  <%= link_to "Show This Ambassador", @ambassador ,class: "btn btn-secondary custom-button" %> |
+   <%= link_to "Back To Ambassadors", ambassadors_path , class: "btn btn-secondary custom-button"%>
+</div>
+<div>
+<%= render "form", ambassador: @ambassador %>
+</div>
+</div>
+
+
+

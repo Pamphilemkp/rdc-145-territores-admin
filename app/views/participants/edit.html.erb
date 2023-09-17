@@ -1,10 +1,15 @@
-<h1>Editing participant</h1>
-
-<%= render "form", participant: @participant %>
-
-<br>
-
-<div>
-  <%= link_to "Show this participant", @participant %> |
-  <%= link_to "Back to participants", participants_path %>
+<div class="container d-flex flex-column gap-2">
+<div >
+  <h1>Edit Participant</h1>
 </div>
+  <div class="d-flex justify-content-end">
+   <%= link_to "Show this participant", @participant  ,class: "btn btn-secondary custom-button" %> |
+   <%= link_to "Back to participants", participants_path, class: "btn btn-secondary custom-button"%>
+</div>
+<div>
+<%= render "form", participant: @participant %>
+</div>
+</div>
+
+
+

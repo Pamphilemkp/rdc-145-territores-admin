@@ -1,14 +1,20 @@
+
 <p style="color: green"><%= notice %></p>
-
-<h1>Sponsors</h1>
-
+<div class="container">
+<div class="d-flex flex-column gap-2 ">
+  <div  class="d-flex flex-column gap-4">
+   <div >
+    <h1 class="sponsor-head position-absolute top-0 mt-5  " >Sponsors</h1>
+   </div>
+   <div class="d-flex justify-content-end">
+    <%= link_to "New Sponsor", new_sponsor_path , class: "btn btn-secondary custom-button"%>
+  </div>
+  </div>
 <div id="sponsors">
-  <% @sponsors.each do |sponsor| %>
-    <%= render sponsor %>
-    <p>
-      <%= link_to "Show this sponsor", sponsor %>
-    </p>
-  <% end %>
+    <%= render @sponsors %>
+</div>
+</div>
 </div>
 
-<%= link_to "New sponsor", new_sponsor_path %>
+
+

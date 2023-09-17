@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   include Trestle::Auth::ModelMethods
   include Trestle::Auth::ModelMethods::Rememberable
   attribute :email, :string

@@ -1,10 +1,14 @@
 <p style="color: green"><%= notice %></p>
+<div class="container d-flex flex-column">
+    <div class="d-flex justify-content-end gap-1">
+      <%= link_to "Edit this user", edit_user_path(@user) ,class: "btn btn-secondary custom-button"%> |
+     <%= link_to "Back to users", users_path  ,class: "btn btn-secondary custom-button"%>
+    </div>
+    <div>
+       <%= render @user %>
+    </div>
+    <div>
+     <%= button_to "Destroy this user", @user, method: :delete ,class: "btn btn-danger custom-button mt-4  float-end"%>
+    </div>
 
-<%= render @user %>
-
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
-
-  <%= button_to "Destroy this user", @user, method: :delete %>
 </div>

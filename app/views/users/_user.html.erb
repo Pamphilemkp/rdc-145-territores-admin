@@ -1,27 +1,58 @@
+
+<style>
+    /* Custom CSS for table and table cells */
+    .custom-table {
+        width: 100%; /* Set the width of the table as needed */
+    }
+
+    .custom-table th, .custom-table td {
+        width: 100px; /* Set the width of the table cells as needed */
+        height: 10px; /* Set the height of the table cells as needed */
+        overflow: hidden; /* Hide overflowing text */
+        white-space: nowrap;
+        font-family: 'ubuntu', sans-serif;
+    }
+
+    .sponsor-head {
+    margin-left: 20px;
+    margin-top:4px;
+    color: #333; 
+   
+  }
+  .custom-button{
+    font-size: 16px; 
+    font-weight: bold; 
+    color: white;
+    font-family: 'ubuntu', sans-serif;
+  }
+
+
+</style>
+<div class="container">
 <div id="<%= dom_id user %>">
-  <p>
-    <strong>First name:</strong>
-    <%= user.first_name %>
-  </p>
-
-  <p>
-    <strong>Last name:</strong>
-    <%= user.last_name %>
-  </p>
-
-  <p>
-    <strong>Photo:</strong>
-    <%= user.photo %>
-  </p>
-
-  <p>
-    <strong>Address:</strong>
-    <%= user.address %>
-  </p>
-
-  <p>
-    <strong>Phone:</strong>
-    <%= user.phone %>
-  </p>
-
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered custom-table mt-4">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">First name:</th>
+      <th scope="col">Last name:</th>
+      <th scope="col">Photo:</th>
+      <th scope="col">Address:</th>
+      <th scope="col">Phone:</th>
+      <th scope="col">Show User:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center"><%= user.first_name %></td>
+      <td class="text-center"><%= user.last_name %></td>
+      <td class="text-center"><%= image_tag user.photo_url if user.photo? %></td>
+      <td class="text-center"><%= user.address %></td>
+      <td class="text-center"><%= user.phone %></td>
+      <td class="text-center"> <%= link_to "Show this user", user, class: "btn btn-sm btn-primary custom-button" %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
 </div>

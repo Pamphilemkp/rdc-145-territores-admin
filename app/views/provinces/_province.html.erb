@@ -1,32 +1,63 @@
+<style>
+    /* Custom CSS for table and table cells */
+    .custom-table {
+        width: 100%; /* Set the width of the table as needed */
+    }
+
+    .custom-table th, .custom-table td {
+        width: 100px; /* Set the width of the table cells as needed */
+        height: 10px; /* Set the height of the table cells as needed */
+        overflow: hidden; /* Hide overflowing text */
+        white-space: nowrap;
+        font-family: 'ubuntu', sans-serif;
+    }
+
+    .sponsor-head {
+    margin-left: 20px;
+    margin-top:4px;
+    color: #333; 
+   
+  }
+  .custom-button{
+    font-size: 16px; 
+    font-weight: bold; 
+    color: white;
+    font-family: 'ubuntu', sans-serif;
+  }
+
+
+</style>
+<div class="container">
 <div id="<%= dom_id province %>">
-  <p>
-    <strong>Name:</strong>
-    <%= province.name %>
-  </p>
-
-  <p>
-    <strong>Chef lieu:</strong>
-    <%= province.chef_lieu %>
-  </p>
-
-  <p>
-    <strong>Langues:</strong>
-    <%= province.langues %>
-  </p>
-
-  <p>
-    <strong>Superficie:</strong>
-    <%= province.superficie %>
-  </p>
-
-  <p>
-    <strong>Territoires:</strong>
-    <%= province.territoires %>
-  </p>
-
-  <p>
-    <strong>Map:</strong>
-    <%= province.map %>
-  </p>
-
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered custom-table mt-4">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Name:</th>
+      <th scope="col">Chef lieu:</th>
+      <th scope="col">Langues:</th>
+      <th scope="col">Superficie:</th>
+      <th scope="col">Territoires:</th>
+      <th scope="col">Map:</th>
+      <th scope="col">Show Province:</th>
+     
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center"> <%=  province.name  %></td>
+      <td class="text-center"><%= province.chef_lieu %></td>
+      <td class="text-center"><%= province.langues %></td>
+      <td class="text-center"> <%=  province.superficie %></td>
+      <td class="text-center"><%= province.territoires%></td>
+      <td class="text-center"> <%=  province.map %></td>
+      <td class="text-center"> <%= link_to "Show This Province", province  , class: "btn btn-sm btn-primary custom-button"%>
+    </td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+</div>
+
