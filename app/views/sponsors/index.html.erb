@@ -1,4 +1,26 @@
 
+<style>
+    /* Custom CSS for table and table cells */
+    .custom-table {
+        width: 100%; /* Set the width of the table as needed */
+    }
+
+    .custom-table th, .custom-table td {
+        width: 100px; /* Set the width of the table cells as needed */
+        height: 10px; /* Set the height of the table cells as needed */
+        overflow: hidden; /* Hide overflowing text */
+        white-space: nowrap;
+        font-family: 'ubuntu', sans-serif;
+    }
+
+    .sponsor-head {
+        margin-left: 20px;
+        margin-top: 4px;
+        color: #333; 
+    }
+
+
+</style>
 <p style="color: green"><%= notice %></p>
 <div class="container">
 <div class="d-flex flex-column gap-2 ">
@@ -11,7 +33,45 @@
   </div>
   </div>
 <div id="sponsors">
-    <%= render @sponsors %>
+  <div class="container">
+<div id="<%= @sponsors %>">
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered custom-table mt-4">
+      <thead class="table-dark">
+        <tr>
+          <th >First name:</th>
+          <th >Last name:</th>
+          <th >Phone:</th>
+          <th >Address:</th>
+          <th >Country of residence:</th>
+          <th >Reason of sponsorship:</th>
+          <th >Type of sponsorship offering:</th>
+          <th >Feedback:</th>
+          <th>Show Sponsor:</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @sponsors.each do |sponsor|%>
+          <tr>
+            <td class="text-center"><%= sponsor.first_name %></td>
+            <td class="text-center"><%= sponsor.last_name %></td>
+            <td class="text-center"><%= sponsor.phone %></td>
+            <td class="text-center"><%= sponsor.address %></td>
+            <td class="text-center"><%= sponsor.country_of_residence %></td>
+            <td class="text-center"><%= sponsor.reason_of_sponsorship %></td>
+            <td class="text-center"><%= sponsor.type_of_sponsorship_offering %></td>
+            <td class="text-center"><%= sponsor.feedback %></td>
+            <td class="text-center">
+              <%= link_to "Show sponsor", sponsor, class: "btn btn-sm btn-primary custom-button" %>
+            </td>
+          </tr>
+          <%end%>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
 </div>
 </div>
 </div>
