@@ -1,4 +1,5 @@
 
+
 <style>
     /* Custom CSS for table and table cells */
     .custom-table {
@@ -46,10 +47,14 @@
     <tr>
       <td class="text-center"><%= user.first_name %></td>
       <td class="text-center"><%= user.last_name %></td>
-      <td class="text-center"><%= image_tag user.photo_url if user.photo? %></td>
+      <td class="text-center">
+      <% if user.photo? %>
+        <%= image_tag user.photo_url, class: "img-thumbnail rounded-circle", style: "max-height: 50px; max-width: 50px;" %>
+      <% end %>
+    </td>
       <td class="text-center"><%= user.address %></td>
       <td class="text-center"><%= user.phone %></td>
-      <td class="text-center"> <%= link_to "Show this user", user, class: "btn btn-sm btn-primary custom-button" %></td>
+      <td class="text-center"> <%= link_to "Show User", user, class: "btn btn-sm btn-primary custom-button" %></td>
     </tr>
   </tbody>
 </table>

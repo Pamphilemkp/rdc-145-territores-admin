@@ -14,11 +14,68 @@
   </head>
 
   <body>
-  <%= render "layouts/sidebar" %>
-     <div>
+ 
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center gap-5 align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline custom-font"> Admin Menu</span>
+                </a>
+                <ul class="nav nav-pills flex-column gap-4 mb-sm-auto mb-0 align-items-center  align-items-sm-start" id="menu">
+                 <li class="nav-item custom-width">
+                    <%= link_to ambassadors_path, class: "nav-link align-middle px-0 d-flex gap-3 align-items-center custom-width" do %>
+                        <i class="fa-solid fa-star" style="color: #ffffff; font-size: 20px;"></i>
+                        <span class="ms-1 d-none d-sm-inline justify-content-center custom-font" style="font-size: 16px; background-color: transparent; color: white; padding: 5px 10px; border-radius: 5px; transition: background-color 0.3s;">Ambassadors</span>
+                    <% end %>
+                </li>
+
+                <li class="nav-item custom-width">
+                    <%= link_to participants_path, class: "nav-link align-middle px-0 d-flex gap-3 align-items-center custom-width" do %>
+                        <i class="fa-solid fa-users" style="color: #ffffff; font-size: 20px;"></i>
+                        <span class="ms-1 d-none d-sm-inline justify-content-center custom-font" style="font-size: 16px; background-color: transparent; color: white; padding: 5px 10px; border-radius: 5px; transition: background-color 0.3s;">Participants</span>
+                    <% end %>
+                </li>
+
+                  
+                   <li class="nav-item custom-width">
+                        <%= link_to provinces_path, class: "nav-link align-middle px-0 d-flex gap-4 align-items-center custom-width" do %>
+                            <i class="fa-solid fa-map-marker-alt" style="color: #ffffff; font-size: 20px;"></i>
+                            <span class="ms-1 d-none d-sm-inline justify-content-center custom-font" style="font-size: 16px; background-color: transparent; color: white; padding: 5px 10px; border-radius: 5px; transition: background-color 0.3s;">Provinces</span>
+                        <% end %>
+                    </li>
+
+                  <li class="nav-item custom-width">
+                        <%= link_to sponsors_path, class: "nav-link align-middle px-0 d-flex gap-3 align-items-center custom-width" do %>
+                            <i class="fa-solid fas fa-handshake" style="color: #ffffff; font-size: 20px;"></i>
+                            <span class="ms-1 d-none d-sm-inline justify-content-center custom-font" style="font-size: 16px; background-color: transparent; color: white; padding: 5px 10px; border-radius: 5px; transition: background-color 0.3s;">Sponsors</span>
+                        <% end %>
+                    </li>
+
+                  <li class="nav-item custom-width">
+                    <%= link_to users_path, class: "nav-link align-middle px-0 d-flex gap-4 align-items-center custom-width" do %>
+                        <i class="fa-solid fas fa-user" style="color: #ffffff; font-size: 20px;"></i>
+                        <span class="ms-1 d-none d-sm-inline justify-content-center custom-font" style="font-size: 16px; background-color: transparent; color: white; padding: 5px 10px; border-radius: 5px; transition: background-color 0.3s;">Users</span>
+                    <% end %>
+                    </li>
+
+                  
+                   
+                  
+                </ul>
+                <hr>
+              
+            </div>
+        </div>
+        <div class="col py-3" style="overflow-x: auto;">
+             <%= yield %>
+        </div>
+    </div>
+</div>
+
+    <div>
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
      </div>
-    <%= yield %>
   </body>
 </html>
