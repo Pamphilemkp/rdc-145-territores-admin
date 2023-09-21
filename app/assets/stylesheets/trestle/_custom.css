@@ -28,7 +28,7 @@
   }
 
   .table-container .trestle-table tbody tr:nth-child(odd) {
-    background-color: rgb(197, 222, 232, 13%);
+    background-color: rgba(197, 222, 232, 13%);
   }
 
   .table-container .trestle-table  tr th:nth-child(even) {
