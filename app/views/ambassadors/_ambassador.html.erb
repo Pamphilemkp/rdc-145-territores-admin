@@ -1,67 +1,100 @@
 <style>
     /* Custom CSS for table and table cells */
     .custom-table {
-        width: 100%; /* Set the width of the table as needed */
+        width: 100%;
     }
 
     .custom-table th, .custom-table td {
-        width: 100px; /* Set the width of the table cells as needed */
-        height: 10px; /* Set the height of the table cells as needed */
-        overflow: hidden; /* Hide overflowing text */
         white-space: nowrap;
-        font-family: 'ubuntu', sans-serif;
     }
 
     .sponsor-head {
-    margin-left: 20px;
-    margin-top:4px;
-    color: #333; 
-   
-  }
- 
+        margin-top: 10px;
+        color: #333;
+    }
 
+    /* Add responsive styles for smaller screens */
+    @media (max-width: 767px) {
+        .custom-table th,
+        .custom-table td {
+            width: auto; /* Allow content to expand */
+            text-align: left; /* Align content to the left */
+            border-bottom: 1px solid #eee;
+            padding: 5px;
+            overflow: hidden; /* Add overflow hidden for mobile screens */
+            display: block; /* Display table cells as block elements */
+        }
 
+        /* Display labels generated from data-label attribute */
+        .custom-table td::before {
+            content: attr(data-label);
+            font-weight: bold;
+            display: block;
+        }
+
+        /* Add specific style for the address field */
+        .custom-table td.address {
+            white-space: nowrap;
+            text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+            overflow: hidden;
+        }
+        
+        
+        /* .container {
+            padding: 0;
+        } */
+    }
 </style>
-<div class="container">
-  <div id="<%= dom_id ambassador %>">
-  <div class="table-responsive">
-    <table class="table table-striped table-bordered custom-table mt-4">
-  <thead class="table-dark">
-    <tr>
-      <th scope="col">First name:</th>
-      <th scope="col">Last name:</th>
-      <th scope="col">Email:</th>
-      <th scope="col">Phone:</th>
-      <th scope="col">Address:</th>
-      <th scope="col">Citizenship:</th>
-      <th scope="col">Presentation:</th>
-      <th scope="col">Position:</th>
-      <th scope="col">Comment:</th>
-      <th scope="col">Reason of choice:</th>
-      <th scope="col">Territoire:</th>
-      <th scope="col">Show Ambassador</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="text-center"> <%=ambassador.first_name %></td>
-      <td class="text-center"><%=ambassador.last_name %></td>
-      <td class="text-center"><%= ambassador.email %></td>
-      <td class="text-center"> <%= ambassador.phone %></td>
-      <td class="text-center"><%= ambassador.address %></td>
-      <td class="text-center"> <%= ambassador.citizenship %></td>
-      <td class="text-center"><%= ambassador.presentation %> </td>
-      <td class="text-center"> <%= ambassador.position %> </td>
-      <td class="text-center"> <%= ambassador.comment %> </td>
-      <td class="text-center"> <%= ambassador.reason_of_choice %> </td>
-      <td class="text-center"> <%= ambassador.territoire %> </td>
-      <td class="text-center">   <%= link_to "Show This Ambassador", ambassador , class: "btn btn-sm btn-primary custom-button"%>
-    </td>
-    </tr>
-  </tbody>
-</table>
+<div class="container ">
+    <h1 class="sponsor-head custom-font ">Ambassador Information</h1>
+    <div class="table-responsive overflow-x-hidden">
+        <table class="table table-striped table-bordered table-sm mt-4 custom-table">
+            <tbody>
+                <tr>
+                     <td class="custom-font">First name:</td>
+                    <td ><%= ambassador.first_name  %></td>
+                </tr>
+                <tr>
+                   <td class="custom-font">Last name:</td>
+                    <td ><%= ambassador.last_name %></td>
+                </tr>
+                <tr>
+                    <td class="custom-font ">Email:</td>
+                    <td class="text-wrap"><%= ambassador.email %></td>
+                </tr>
+                <tr>
+                  <td class="custom-font address">Phone:</td>
+                    <td class="address text-wrap"><%= ambassador.phone %></td>
+                </tr>
+                <tr>
+                <td class="custom-font">Address:</td>
+                    <td class="address text-wrap"><%= ambassador.address %></td>
+                </tr>
+                <tr>
+                <td class="custom-font">Citizenship:</td>
+                    <td class="address text-wrap"><%= ambassador.citizenship %></td>
+                </tr>
+                <tr>
+                  <td class="custom-font">Presentation:</td>
+                  <td class="address text-wrap"><%= ambassador.presentation %></td>
+                </tr>
+                <tr>
+                  <td class="custom-font">Position:</td>
+                  <td class="address text-wrap"><%=  ambassador.position  %></td>
+                </tr>
+                <tr>
+                  <td class="custom-font">Comment:</td>
+                  <td class="address text-wrap"><%= ambassador.comment  %></td>
+                </tr>
+                <tr>
+                  <td class="custom-font">Reason of choice:</td>
+                  <td class="address text-wrap"><%=  ambassador.reason_of_choice %></td>
+                </tr>
+                <tr>
+                  <td class="custom-font">Territoire:</td>
+                  <td class="address text-wrap"><%=  ambassador.territoire %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-</div>
-</div>
-
