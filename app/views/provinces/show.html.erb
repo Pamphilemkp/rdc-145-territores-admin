@@ -1,10 +1,15 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @province %>
 
-<div>
-  <%= link_to "Edit this province", edit_province_path(@province) %> |
-  <%= link_to "Back to provinces", provinces_path %>
+<div class="container d-flex flex-column custom-margin-form">
+    <div class="d-flex justify-content-end gap-1">
+      <%= link_to "Edit this province", edit_province_path(@province)  ,class: "btn btn-secondary custom-button"%> |
+      <%= link_to "Back to provinces", provinces_path  ,class: "btn btn-secondary custom-button"%>
+    </div>
+    <div>
+       <%= render @province %>
+    </div>
+    <div>
+      <%= button_to "Destroy this province", @province, method: :delete ,class: "btn btn-danger custom-button mt-4  float-end"%>
+    </div>
 
-  <%= button_to "Destroy this province", @province, method: :delete %>
 </div>

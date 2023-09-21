@@ -1,10 +1,13 @@
-<h1>Editing province</h1>
 
-<%= render "form", province: @province %>
-
-<br>
-
+<div class="container d-flex flex-column gap-2 custom-margin-form">
+<div >
+   <h1 >Editing Province</h1>
+</div>
+  <div class="d-flex justify-content-end">
+ <%= link_to "Show This Province", @province   ,class: "btn btn-secondary custom-button"%> |
+  <%= link_to "Back To Provinces", provinces_path ,class: "btn btn-secondary custom-button" %>
+</div>
 <div>
-  <%= link_to "Show this province", @province %> |
-  <%= link_to "Back to provinces", provinces_path %>
+<%= render "form", province: @province %>
+</div>
 </div>

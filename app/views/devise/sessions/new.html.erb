@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row justify-content-center custom-margin vh-100">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header"><h2>Log in</h2></div>
+        <div class="card-body">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form" }) do |f| %>
+            <div class="form-group">
+              <%= f.label :email , class: "custom-font"%>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mt-1 custom-font" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :password, class: "custom-font mt-2"%>
+              <%= f.password_field :password, autocomplete: "current-password", class: "form-control mt-1 custom-font" %>
+            </div>
+
+            <% if devise_mapping.rememberable? %>
+              <div class="form-group mt-2">
+                <div class="form-check">
+                  <%= f.check_box :remember_me, class: "form-check-input" %>
+                  <%= f.label :remember_me, class: "form-check-label custom-font" %>
+                </div>
+              </div>
+            <% end %>
+
+            <div class="form-group mt-2 custom-font">
+              <%= f.submit "Log in", class: "btn btn-secondary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

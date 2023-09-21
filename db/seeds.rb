@@ -7,3 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 User.create(email: "pamphilemkp@gmail.com", password: "Rdc145Success!", first_name: "Pamphile", last_name: "MKP")
+# seeds.rb
+
+# Create a new Devise user with the email and password
+DeviseUser.create(email: "allahabadshah148@gmail.com", password: "basit*786a")
+
+# Note: Replace "DeviseUser" with the actual name of your Devise user model.

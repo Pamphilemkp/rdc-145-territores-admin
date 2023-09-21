@@ -1,32 +1,79 @@
-<div id="<%= dom_id province %>">
-  <p>
-    <strong>Name:</strong>
-    <%= province.name %>
-  </p>
+<style>
+    /* Custom CSS for table and table cells */
+    .custom-table {
+        width: 100%;
+    }
 
-  <p>
-    <strong>Chef lieu:</strong>
-    <%= province.chef_lieu %>
-  </p>
+    .custom-table th, .custom-table td {
+        white-space: nowrap;
+    }
 
-  <p>
-    <strong>Langues:</strong>
-    <%= province.langues %>
-  </p>
+    .sponsor-head {
+        margin-top: 10px;
+        color: #333;
+    }
 
-  <p>
-    <strong>Superficie:</strong>
-    <%= province.superficie %>
-  </p>
+    /* Add responsive styles for smaller screens */
+    @media (max-width: 767px) {
+        .custom-table th,
+        .custom-table td {
+            width: auto; /* Allow content to expand */
+            text-align: left; /* Align content to the left */
+            border-bottom: 1px solid #eee;
+            padding: 5px;
+            overflow: hidden; /* Add overflow hidden for mobile screens */
+            display: block; /* Display table cells as block elements */
+        }
 
-  <p>
-    <strong>Territoires:</strong>
-    <%= province.territoires %>
-  </p>
+        /* Display labels generated from data-label attribute */
+        .custom-table td::before {
+            content: attr(data-label);
+            font-weight: bold;
+            display: block;
+        }
 
-  <p>
-    <strong>Map:</strong>
-    <%= province.map %>
-  </p>
-
+        /* Add specific style for the address field */
+        .custom-table td.address {
+            white-space: nowrap;
+            text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+            overflow: hidden;
+        }
+        
+        /* Adjust container padding to prevent horizontal overflow */
+       
+    }
+</style>
+<div class="container p-0">
+    <h1 class="sponsor-head custom-font">Province Information</h1>
+    <div class="table-responsive overflow-x-hidden">
+        <table class="table table-striped table-bordered table-sm mt-4 custom-table">
+            <tbody>
+                <tr>
+                     <td class="custom-font">Name:</td>
+                    <td ><%= province.name  %></td>
+                </tr>
+                <tr>
+                   <td class="custom-font">Chef lieu:</td>
+                    <td ><%=  province.chef_lieu %></td>
+                </tr>
+                <tr>
+                    <td class="custom-font ">Langues:</td>
+                    <td class="text-wrap"><%= province.langues %></td>
+                </tr>
+                <tr>
+                  <td class="custom-font address">Superficie:</td>
+                    <td class="address text-wrap"><%= province.superficie %></td>
+                </tr>
+                <tr>
+                <td class="custom-font">Territoires:</td>
+                    <td class="address text-wrap"><%= province.territoires%></td>
+                </tr>
+                <tr>
+                <td class="custom-font">Map:</td>
+                <td class="address text-wrap"><%= province.map  %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
+

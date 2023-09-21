@@ -1,42 +1,96 @@
-<div id="<%= dom_id sponsor %>">
-  <p>
-    <strong>First name:</strong>
-    <%= sponsor.first_name %>
-  </p>
+<style>
+ /* Custom CSS for table and table cells */
+.custom-table {
+    width: 100%;
+}
 
-  <p>
-    <strong>Last name:</strong>
-    <%= sponsor.last_name %>
-  </p>
+.custom-table th,
+.custom-table td {
+    overflow: hidden;
+    white-space: nowrap;
+}
 
-  <p>
-    <strong>Phone:</strong>
-    <%= sponsor.phone %>
-  </p>
+.sponsor-head {
 
-  <p>
-    <strong>Address:</strong>
-    <%= sponsor.address %>
-  </p>
+    margin-top: 10px;
+    color: #333;
+}
 
-  <p>
-    <strong>Country of residence:</strong>
-    <%= sponsor.country_of_residence %>
-  </p>
+/* Add responsive styles */
+@media (max-width: 767px) {
+    .table-responsive td {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 5px;
+        border-bottom: 1px solid #eee;
+    }
 
-  <p>
-    <strong>Reason of sponsorship:</strong>
-    <%= sponsor.reason_of_sponsorship %>
-  </p>
+    .table-responsive td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: inline-block;
+        width: 100%;
+        margin-right: 10px;
+        text-align: left;
+    }
 
-  <p>
-    <strong>Type of sponsorship offering:</strong>
-    <%= sponsor.type_of_sponsorship_offering %>
-  </p>
+    /* Hide the "Value" in mobile size */
+    .table-responsive td[data-label="Value"]::before {
+        content: none;
+    }
+    
+    /* Add a separation line between "Field" and cell content */
+    .table-responsive td::before {
+        border-right: 1px solid #eee;
+        padding-right: 10px;
+        margin-right: 10px;
+    }
+}
+</style>
 
-  <p>
-    <strong>Feedback:</strong>
-    <%= sponsor.feedback %>
-  </p>
-
+<div class="container ">
+    <h1 class="sponsor-head custom-font">Sponsor Information</h1>
+    <div class="table-responsive overflow-x-hidden">
+        <table class="table table-striped table-bordered table-sm mt-4">
+           
+            <tbody>
+                <tr>
+                    <td class="custom-font">First name:</td>
+                    <td ><%= sponsor.first_name %></td>
+                </tr>
+                <tr>
+                    <td class="custom-font" >Last name:</td>
+                    <td ><%= sponsor.last_name %></td>
+                </tr>
+                <tr>
+                    <td class="custom-font" >Phone:</td>
+                    <td ><%= sponsor.phone %></td>
+                </tr>
+                <tr>
+                    <td class="custom-font" >Address:</td>
+                    <td ><%= sponsor.address %></td>
+                </tr>
+                <tr>
+                    <td class="custom-font" >Country of residence:</td>
+                    <td ><%= sponsor.country_of_residence %></td>
+                </tr>
+                <tr>
+                    <td class="custom-font" >Reason of sponsorship:</td>
+                    <td ><%= sponsor.reason_of_sponsorship %></td>
+                </tr>
+                <tr>
+                    <td class="custom-font" >Type of sponsorship offering:</td>
+                    <td ><%= sponsor.type_of_sponsorship_offering %></td>
+                </tr>
+                <tr>
+                    <td class="custom-font" >Feedback:</td>
+                    <td ><%= sponsor.feedback %></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
 </div>
+
+                   

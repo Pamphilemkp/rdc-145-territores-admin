@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    
+    <script src="https://kit.fontawesome.com/89cc5c630d.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= javascript_include_tag "trestle/custom" %>
@@ -14,10 +14,67 @@
   </head>
 
   <body>
-     <div>
-       <p class="notice"><%= notice %></p>
+     <% if devise_user_signed_in? %>
+  
+
+<button class="btn px-1 py-0 open-btn d-md-none d-block"> <i class="fa-solid fa-bars-staggered"></i></button>
+    <div class="main-container d-flex">
+    
+        <div class="sidebar" id="side_nav">
+            <div class="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
+                <h1 class="fs-4">
+                    <span class="bg-white text-dark rounded shadow px-2 me-2">PB</span>
+                    
+                   <span class="text-white custom-font"> Admin Menu</span>
+                </h1>
+                <button class="btn d-md-none d-block close-btn px-1 py-0 text-white">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+            <ul class="list-unstyled px-2 d-flex flex-column gap-4 ">
+                <li class="active d-flex ">
+                <%= link_to ambassadors_path, class: "text-decoration-none px-3 py-2 d-block custom-font" do %>
+                    <i class="fa-solid fa-star" style="color: #ffffff; font-size: 20px; margin-right: 5px;"></i> <!-- Added margin-right here -->
+                    Ambassadors
+                <% end %>
+                </li>
+
+                <li class=""> <%= link_to participants_path, class:"text-decoration-none px-3 py-2 d-block custom-font" do %><i class="fa-solid fa-users" style="color: #ffffff; font-size: 20px; margin-right: 10px;"></i>Participants<%end%></li>
+
+                <li class=""><%= link_to provinces_path, class:"text-decoration-none px-3 py-2 d-block custom-font" do %><i class="fa-solid fa-map-marker-alt" style="color: #ffffff; font-size: 20px; margin-right: 20px;"></i>Provinces<%end%></li>
+
+                <li class=""> <%= link_to sponsors_path, class: "text-decoration-none px-3 py-2 d-block custom-font" do %><i class="fa-solid fas fa-handshake" style="color: #ffffff; font-size: 20px; margin-right: 12px;"></i>Sponsors<%end%></li>
+
+                <li class=""><%= link_to users_path, class:"text-decoration-none px-3 py-2 d-block custom-font" do %><i class="fa-solid fas fa-user" style="color: #ffffff; font-size: 20px; margin-right: 18px;"></i>Users<%end%></li>
+            <ul>
+            <hr class="h-color mx-3">
+           
+        </div>
+        <%end%>
+        <div class="content" style="overflow-x: auto;">
+        
+             <%= yield %>
+        </div>
+    </div>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            $(".sidebar ul li").on('click' , function(){
+                $(".sidebar ul li.active").removeClass('active');
+                $(this).addClass('active');
+            })
+                $('.open-btn').on('click',function(){
+                    $('.sidebar').addClass('active')
+                })
+                $('.close-btn').on('click',function(){
+                    $('.sidebar').removeClass('active')
+                })
+        </script>
+
+
+      <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
      </div>
-    <%= yield %>
+
   </body>
 </html>

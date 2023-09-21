@@ -1,14 +1,88 @@
+
+<style>
+    /* Custom CSS for table and table cells */
+    .custom-table {
+        width: 100%; /* Set the width of the table as needed */
+    }
+
+    .custom-table th, .custom-table td {
+        width: 100px; /* Set the width of the table cells as needed */
+        height: 10px; /* Set the height of the table cells as needed */
+        overflow: hidden; /* Hide overflowing text */
+        white-space: nowrap;
+        font-family: 'ubuntu', sans-serif;
+    }
+
+    .sponsor-head {
+    margin-left: 20px;
+    margin-top:4px;
+    color: #333; 
+   
+  }
+ 
+
+
+</style>
 <p style="color: green"><%= notice %></p>
-
-<h1>Ambassadors</h1>
-
+<div class="container">
+<div class="d-flex flex-column gap-2 ">
+  <div class="d-flex flex-column gap-5 ">
+   <div >
+    <h1 class="sponsor-head position-absolute top-0 mt-5  " >Ambassadors</h1>
+   </div>
+   <div class="d-flex justify-content-end mt-4">
+   <%= link_to "New Ambassador", new_ambassador_path , class: "btn btn-secondary custom-button"%>
+  </div>
+  </div>
+  </div>
+</div>
 <div id="ambassadors">
+ <div class="container">
+  <div id="<%=  @ambassadors %>">
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered custom-table mt-4">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">First name:</th>
+      <th scope="col">Last name:</th>
+      <th scope="col">Email:</th>
+      <th scope="col">Phone:</th>
+      <th scope="col">Address:</th>
+      <th scope="col">Citizenship:</th>
+      <th scope="col">Presentation:</th>
+      <th scope="col">Position:</th>
+      <th scope="col">Comment:</th>
+      <th scope="col">Reason of choice:</th>
+      <th scope="col">Territoire:</th>
+      <th scope="col">Show Ambassador</th>
+      
+    </tr>
+  </thead>
+  <tbody>
   <% @ambassadors.each do |ambassador| %>
-    <%= render ambassador %>
-    <p>
-      <%= link_to "Show this ambassador", ambassador %>
-    </p>
-  <% end %>
+    <tr>
+      <td class="text-center"> <%=ambassador.first_name %></td>
+      <td class="text-center"><%=ambassador.last_name %></td>
+      <td class="text-center"><%= ambassador.email %></td>
+      <td class="text-center"> <%= ambassador.phone %></td>
+      <td class="text-center"><%= ambassador.address %></td>
+      <td class="text-center"> <%= ambassador.citizenship %></td>
+      <td class="text-center"><%= ambassador.presentation %> </td>
+      <td class="text-center"> <%= ambassador.position %> </td>
+      <td class="text-center"> <%= ambassador.comment %> </td>
+      <td class="text-center"> <%= ambassador.reason_of_choice %> </td>
+      <td class="text-center"> <%= ambassador.territoire %> </td>
+      <td class="text-center">   <%= link_to "Show This Ambassador", ambassador , class: "btn btn-sm btn-primary custom-button"%>
+    </td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+</div>
+</div>
 </div>
 
-<%= link_to "New ambassador", new_ambassador_path %>
+
+</div>
+
+
