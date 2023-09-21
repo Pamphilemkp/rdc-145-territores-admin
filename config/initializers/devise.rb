@@ -3,14 +3,15 @@
 
 Devise.setup do |config|
  
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'pamphilemkp@gmail.com'
 
   require 'devise/orm/active_record'
 
   config.case_insensitive_keys = [:email]
 
   config.strip_whitespace_keys = [:email]
-
+  
+  config.sign_in_after_reset_password =  false
  
   config.skip_session_storage = [:http_auth]
 
