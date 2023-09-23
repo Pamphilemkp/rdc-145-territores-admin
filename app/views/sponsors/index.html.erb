@@ -44,13 +44,8 @@
            <th scope="col" class="text-center">ID:</th>
           <th >First name:</th>
           <th >Last name:</th>
-           <th>Show Sponsor:</th>
           <th >Phone:</th>
-           <%#<th >Address:</th>
-          <th >Country of residence:</th>
-          <th >Reason of sponsorship:</th>
-          <th >Type of sponsorship offering:</th>
-          <th >Feedback:</th> %>
+           <th>Voir sponsors:</th>
          
         </tr>
       </thead>
@@ -61,15 +56,10 @@
             <td class="text-center"><%= index+1 %></td>
             <td class="text-center"><%= sponsor.first_name %></td>
             <td class="text-center"><%= sponsor.last_name %></td>
-             <td class="text-center">
-              <%= link_to "Show sponsor", sponsor, class: "btn btn-sm btn-primary custom-button" %>
-            </td>
              <td class="text-center"><%= sponsor.phone %> </td>
-            <%# <td class="text-center"><%= sponsor.address %> 
-            <%# <td class="text-center"><%= sponsor.country_of_residence %> 
-            <%# <td class="text-center"><%= sponsor.reason_of_sponsorship %> 
-            <%# <td class="text-center"><%= sponsor.type_of_sponsorship_offering %> 
-            <%# <td class="text-center"><%= sponsor.feedback %> 
+             <td class="text-center">
+              <%= link_to "Voir plsu de #{sponsor.first_name}", sponsor, class: "btn btn-sm btn-primary custom-button" %>
+            </td>
             
           </tr>
           <%end%>

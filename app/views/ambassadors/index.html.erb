@@ -45,18 +45,11 @@
     <tr>
       
       <th scope="col" class="text-center">ID:</th>
-      <th scope="col">First name:</th>
-      <th scope="col">Last name:</th>
-      <th scope="col">Show Ambassador</th>
+      <th scope="col">Prenom:</th>
+      <th scope="col">Nom:</th>
       <th scope="col">Email:</th>
-      <%# <th scope="col">Phone:</th> %>
-      <%# <th scope="col">Address:</th>
-      <th scope="col">Citizenship:</th>
-      <th scope="col">Presentation:</th>
-      <th scope="col">Position:</th>
-      <th scope="col">Comment:</th>
-      <th scope="col">Reason of choice:</th> %>
       <th scope="col">Territoire:</th>
+      <th scope="col">Voir details</th>
  
       
     </tr>
@@ -68,16 +61,10 @@
       <td class="text-center "> <%=index + 1%></td>
       <td class="text-center "> <%=ambassador.first_name %></td>
       <td class="text-center "><%=ambassador.last_name %></td>
-      <td class="text-center ">   <%= link_to "Show Ambassador", ambassador , class: "btn btn-sm btn-primary custom-button"%>
-      <td class="text-center "><%= ambassador.email %></td>
-      <%# <td class="text-center "> <%= ambassador.phone %>
-      <%# <td class="text-center"><%= ambassador.address %>
-      <%# <td class="text-center"> <%= ambassador.citizenship %>
-      <%# <td class="text-center"><%= ambassador.presentation %>
-      <%# <td class="text-center"> <%= ambassador.position %>  
-      <%# <td class="text-center"> <%= ambassador.comment %>  
-      <%# <td class="text-center"> <%= ambassador.reason_of_choice %>   
+      <td class="text-center "><%= ambassador.email %></td> 
       <td class="text-center "> <%= ambassador.territoire %></td>
+      
+      <td class="text-center ">   <%= link_to "Voir plus d'info", ambassador , class: "btn btn-sm btn-primary custom-button"%>
       
     </td>
     </tr>

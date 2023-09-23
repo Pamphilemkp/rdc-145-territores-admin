@@ -54,12 +54,9 @@
   
      <th scope="col" class="text-center">ID:</th>
      <th scope="col">Name:</th>
-      <th scope="col">Show Province:</th>
-      <%# <th scope="col">Chef lieu:</th>
-      <th scope="col">Langues:</th>
-      <th scope="col">Superficie:</th> %>
       <th scope="col">Territoires:</th>
       <th scope="col">Map:</th>
+      <th scope="col">Montrer cette province:</th>
       
      
       
@@ -70,12 +67,9 @@
     <tr>
       <td class="text-center"> <%=index + 1 %></td>
       <td class="text-center"> <%=  province.name  %></td>
-       <td class="text-center"> <%= link_to "Show This Province", province  , class: "btn btn-sm btn-primary custom-button"%>
-      <%# <td class="text-center"><%= province.chef_lieu %> 
-      <%# <td class="text-center"><%= province.langues %> 
-      <%# <td class="text-center"> <%=  province.superficie %> 
       <td class="text-center"><%= province.territoires%></td>
       <td class="text-center"> <%=  province.map %></td>
+       <td class="text-center"> <%= link_to "Montrer  #{province.name}", province  , class: "btn btn-sm btn-primary custom-button"%></td>
       
     </td>
     </tr>

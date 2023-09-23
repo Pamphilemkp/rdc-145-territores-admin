@@ -51,10 +51,8 @@
       <th scope="col" class="text-center">ID:</th>
       <th scope="col">First name:</th>
       <th scope="col">Last name:</th>
-      <th scope="col">Show User:</th>
-      <%# <th scope="col">Photo:</th> %>
-      <%# <th scope="col">Address:</th> %>
       <th scope="col">Phone:</th>
+      <th scope="col">Show User:</th>
       
     </tr>
   </thead>
@@ -65,15 +63,8 @@
       <td class="text-center"><%= index+1 %></td>
       <td class="text-center"><%= user.first_name %></td>
       <td class="text-center"><%= user.last_name %></td>
-      <td class="text-center"> <%= link_to "Show this user", user, class: "btn btn-sm btn-primary custom-button" %></td>
-      <%# <td class="text-center">
-      <% if user.photo? %>
-        <%# <%= image_tag user.photo_url, class: "img-thumbnail rounded-circle", style: "max-height: 50px; max-width: 50px;" %>
-      <%# <% end %>  
-    <%# </td>  %>
-      <%# <td class="text-center"><%= user.address %> 
       <td class="text-center"><%= user.phone %></td>
-      
+      <td class="text-center"> <%= link_to "Show this user", user, class: "btn btn-sm btn-primary custom-button" %></td>  
     </tr>
   <%end%>
   </tbody>
