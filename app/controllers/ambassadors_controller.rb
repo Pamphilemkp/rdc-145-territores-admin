@@ -58,6 +58,20 @@ class AmbassadorsController < ApplicationController
     end
   end
 
+  def accept_application
+    @ambassador = Ambassador.find(params[:id])
+    @ambassador.update_columns(acceptance: true)
+    
+    if @ambassador.save  
+      AmbassadorMailer.acceptance_email(@ambassador).deliver_now
+      redirect_to ambassadors_path, notice: "#{@ambassador.first_name} - #{@ambassador.first_name} a ete accepté comme ambassadeur et nous lui avons deja envoye un email pour lui informer."
+    else
+      flash.now[:error] = @ambassador.errors.full_messages.join(", ")
+      puts @ambassador.errors.full_messages # Check the console for error messages
+      # ...
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ambassador
@@ -66,6 +80,6 @@ class AmbassadorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ambassador_params
-      params.require(:ambassador).permit(:first_name, :last_name, :email, :phone, :address, :citizenship, :presentation, :position, :comment, :reason_of_choice, :territoire)
+      params.require(:ambassador).permit(:first_name, :last_name, :email, :phone, :address, :citizenship, :presentation, :position, :comment, :reason_of_choice, :territoire, :acceptance)
     end
 end
