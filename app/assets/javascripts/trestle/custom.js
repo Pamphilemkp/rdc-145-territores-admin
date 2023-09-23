@@ -7,3 +7,5 @@
 //  e.g. //= require "trestle/custom/my_custom_js"
 // app/assets/javascripts/custom.js
 // JavaScript to adjust the position of the popup text
+
+  

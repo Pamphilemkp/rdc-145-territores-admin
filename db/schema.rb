@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_19_105919) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_22_132530) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_19_105919) do
     t.string "territoire"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "acceptance", default: false
   end
 
   create_table "devise_users", force: :cascade do |t|
