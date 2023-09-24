@@ -1,6 +1,6 @@
 <div class="container text-center">
   <% flash.each do |type, message| %>
-    <div class="alert mt-4 custom-margin alert-dismissible fade show <%= type == 'notice' ? 'alert-success' : 'alert-danger' %> w-75 mx-auto" role="alert">
+    <div class="alert mt-5 custom-margin alert-dismissible fade show <%= type == 'notice' ? 'alert-success' : 'alert-danger' %> w-75 mx-auto" role="alert">
       <%= message %>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
