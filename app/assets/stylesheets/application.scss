@@ -39,18 +39,7 @@
     margin-top: 6rem;
   }
 
-  // .nav-pills li a:hover{
-  //   background-color: blue;
-  // }
 
-  // .nav-pills{
-  //   width: 100%;
-    
-  // }
-
-  // .custom-width{
-  //   width: 100%;
-  // }
 
   body{
     background: #eee;
@@ -93,7 +82,6 @@ background:#eee;
   border: 10px;
 }
 
-
 .sidebar li a.active{
   color: #fff;
   background-color: #4a47eb;
@@ -115,14 +103,5 @@ background:#eee;
     position: relative;
   }
 
-  .open-btn{
-    position: absolute;
-    top:1rem;
-    left:1rem;
-    font-size: 20px;
-  }
 
-  .custom-margin-form{
-      margin-top: 4rem;
-  }
 }

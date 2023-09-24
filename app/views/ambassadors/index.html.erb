@@ -1,21 +1,20 @@
-
 <style>
-    /* Custom CSS for table and table cells */
+
     .custom-table {
-        width: 100%; /* Set the width of the table as needed */
+        width: 100%; 
     }
 
     .custom-table th, .custom-table td {
-        width: 100px; /* Set the width of the table cells as needed */
-        height: 10px; /* Set the height of the table cells as needed */
-        overflow: hidden; /* Hide overflowing text */
+        width: 100px;
+        height: 10px; 
+        overflow: hidden; 
         white-space: nowrap;
         font-family: 'ubuntu', sans-serif;
     }
 
     .sponsor-head {
     margin-left: 20px;
-    margin-top:4px;
+    margin-top:4rem;
     color: #333; 
    
   }
@@ -25,16 +24,18 @@
 </style>
 <p style="color: green"><%= notice %></p>
 <div class="container">
-<div class="d-flex flex-column gap-2 ">
-  <div class="d-flex flex-column gap-5 ">
-   <div >
-    <h1 class="sponsor-head position-absolute top-0 mt-5  " >Ambassadors</h1>
-   </div>
-   <div class="d-flex justify-content-end mt-4">
-   <%= link_to "New Ambassador", new_ambassador_path , class: "btn btn-secondary custom-button"%>
-  </div>
-  </div>
-  </div>
+    <div class="d-flex flex-column gap-2 ">
+          <div class="d-flex flex-column gap-1 ">
+              <div >
+                    <h1 class="sponsor-head position-absolute top-0   " >Ambassadors</h1>
+              </div>
+              <div class="d-flex justify-content-end ">
+                  <%= link_to new_ambassador_path, class: "btn btn-secondary custom-button" do %>
+                    <i class="fa-solid fa-user-plus" style="font-size: 1.5rem; color: white;"></i> 
+                 <% end %>
+              </div>
+          </div>
+      </div>
 </div>
 <div id="ambassadors">
  <div class="container overflow-x-hidden">
@@ -49,23 +50,20 @@
       <th scope="col">Nom:</th>
       <th scope="col">Email:</th>
       <th scope="col">Territoire:</th>
-      <th scope="col">Voir details</th>
+  
  
       
     </tr>
   </thead>
   <tbody>
   <% @ambassadors.each_with_index do |ambassador, index| %>
-    <tr class="contianer">
+    <tr class="contianer" onclick="window.location='<%= ambassador_path(ambassador) %>'" style="cursor: pointer;">
       
       <td class="text-center "> <%=index + 1%></td>
       <td class="text-center "> <%=ambassador.first_name %></td>
       <td class="text-center "><%=ambassador.last_name %></td>
       <td class="text-center "><%= ambassador.email %></td> 
       <td class="text-center "> <%= ambassador.territoire %></td>
-      
-      <td class="text-center ">   <%= link_to "Voir plus d'info", ambassador , class: "btn btn-sm btn-primary custom-button"%>
-      
     </td>
     </tr>
     <%end%>
