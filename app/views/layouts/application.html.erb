@@ -88,10 +88,7 @@
               </div>
         </nav>
      <%end%>
-      <div>
-      <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-     </div>
+        <%= render partial: "layouts/flash"%>
              <%= yield  %>
         </div>
     </div>
