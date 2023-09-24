@@ -57,6 +57,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def create_login
+    
+    @user = User.find(params[:id])
+    DeviseUser.create(email: @user.email,  password: "145T#{@user.first_name.downcase}2023")
+      redirect_to users_url, notice: "DeviseUser was successfully created."
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

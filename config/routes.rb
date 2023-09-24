@@ -7,7 +7,11 @@ Rails.application.routes.draw do
     end
   end
   resources :provinces
-  resources :users
+  resources :users do
+    member do
+      post 'create_login'
+    end
+  end
   resources :participants
   resources :sponsors
 
