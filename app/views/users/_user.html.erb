@@ -1,5 +1,4 @@
 <style>
-    /* Custom CSS for table and table cells */
     .custom-table {
         width: 100%;
     }
@@ -17,25 +16,25 @@
     @media (max-width: 767px) {
         .custom-table th,
         .custom-table td {
-            width: auto; /* Allow content to expand */
-            text-align: left; /* Align content to the left */
+            width: auto; 
+            text-align: left; 
             border-bottom: 1px solid #eee;
             padding: 5px;
-            overflow: hidden; /* Add overflow hidden for mobile screens */
-            display: block; /* Display table cells as block elements */
+            overflow: hidden;
+            display: block; 
         }
 
-        /* Display labels generated from data-label attribute */
+      
         .custom-table td::before {
             content: attr(data-label);
             font-weight: bold;
             display: block;
         }
 
-        /* Add specific style for the address field */
+       
         .custom-table td.address {
             white-space: nowrap;
-            text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+            text-overflow: ellipsis; 
             overflow: hidden;
         }
         
@@ -73,7 +72,6 @@
                 <td class="custom-font">Phone:</td>
                     <td ><%= user.phone %></td>
                 </tr>
-                <!-- Add similar rows for other fields -->
             </tbody>
         </table>
     </div>

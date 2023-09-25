@@ -15,62 +15,56 @@
 
     .sponsor-head {
         margin-left: 20px;
-        margin-top: 4px;
+        margin-top:4rem;
         color: #333; 
     }
 
 
 </style>
-<p style="color: green"><%= notice %></p>
 <div class="container ">
 <div class="d-flex flex-column gap-2 ">
   <div  class="d-flex flex-column gap-5 ">
    <div >
-    <h1 class="sponsor-head position-absolute top-0 mt-5  " >Sponsors</h1>
+    <h1 class="sponsor-head position-absolute top-0" >Sponsors</h1>
    </div>
-   <div class="d-flex justify-content-end mt-3">
-    <%= link_to "New Sponsor", new_sponsor_path , class: "btn btn-secondary custom-button"%>
+   <div class="d-flex justify-content-end ">
+    <%= link_to new_sponsor_path, class: "btn btn-secondary custom-button" do %>
+       <i class="fa-solid fa-user-plus" style="font-size: 1.5rem; color: white;"></i> 
+    <% end %>
   </div>
+
   </div>
-<div id="sponsors">
-  <div class="container p-0">
-<div id="<%= @sponsors %>">
-  <div class="table-responsive">
-   <div style="overflow-x: auto;">
-    <table class="table table-striped table-bordered custom-table mt-4">
-      <thead class="table-dark">
-        <tr>
-        
-           <th scope="col" class="text-center">ID:</th>
-          <th >First name:</th>
-          <th >Last name:</th>
-          <th >Phone:</th>
-           <th>Voir sponsors:</th>
-         
-        </tr>
-      </thead>
-      <tbody>
-      <% @sponsors.each_with_index  do |sponsor,index|%>
-          <tr>
-      
-            <td class="text-center"><%= index+1 %></td>
-            <td class="text-center"><%= sponsor.first_name %></td>
-            <td class="text-center"><%= sponsor.last_name %></td>
-             <td class="text-center"><%= sponsor.phone %> </td>
-             <td class="text-center">
-              <%= link_to "Voir plsu de #{sponsor.first_name}", sponsor, class: "btn btn-sm btn-primary custom-button" %>
-            </td>
-            
-          </tr>
-          <%end%>
-      </tbody>
-    </table>
+    <div id="sponsors">
+      <div class="container p-0">
+        <div id="<%= @sponsors %>">
+           <div class="table-responsive">
+              <div style="overflow-x: auto;">
+                 <table class="table table-striped table-bordered custom-table mt-4">
+                   <thead class="table-dark">
+                      <tr>
+                        <th scope="col" class="text-center">ID:</th>
+                         <th >First name:</th>
+                        <th >Last name:</th>
+                        <th >Phone:</th>
+                         </tr>
+                    </thead>
+                    <tbody>
+                      <% @sponsors.each_with_index  do |sponsor,index|%>
+                         <tr class="contianer" onclick="window.location='<%= sponsor_path(sponsor) %>'" style="cursor: pointer;">
+                           <td class="text-center"><%= index+1 %></td>
+                           <td class="text-center"><%= sponsor.first_name %></td>
+                           <td class="text-center"><%= sponsor.last_name %></td>
+                           <td class="text-center"><%= sponsor.phone %> </td>
+                         </tr>
+                       <%end%>
+                     </tbody>
+                  </table>
+              </div>
+            </div>
+         </div>
+       </div>
+    </div>
   </div>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 
 

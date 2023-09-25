@@ -1,20 +1,20 @@
 <style>
-    /* Custom CSS for table and table cells */
+  
     .custom-table {
-        width: 100%; /* Set the width of the table as needed */
+        width: 100%; 
     }
 
     .custom-table th, .custom-table td {
-        width: auto; /* Set the width of the table cells as needed */
-        height: 10px; /* Set the height of the table cells as needed */
-        overflow: hidden; /* Hide overflowing text */
+        width: 100px; 
+        height: 10px; 
+        overflow: hidden; 
         white-space: nowrap;
         font-family: 'ubuntu', sans-serif;
     }
 
     .sponsor-head {
     margin-left: 20px;
-    margin-top:4px;
+    margin-top:4rem;
     color: #333; 
    
   }
@@ -31,56 +31,48 @@
 
 
 </style>
-<p style="color: green"><%= notice %></p>
-<div class="container custom-container ">
-<div class="d-flex flex-column gap-2 ">
-  <div class="d-flex flex-column gap-5">
-   <div >
-    <h1 class="sponsor-head position-absolute top-0 mt-5 " >Provinces</h1>
-   </div>
-   <div class="d-flex justify-content-end mt-4">
-    <%= link_to "New Province", new_province_path , class: "btn btn-secondary custom-button"%>
-  </div>
-  </div>
+<div class="container ">
+    <div class="d-flex flex-column gap-2 ">
+      <div class="d-flex flex-column gap-5">
+      <div >
+        <h1 class="sponsor-head position-absolute top-0" >Provinces</h1>
+      </div>
+      <div class="d-flex justify-content-end">
+        <%= link_to new_province_path, class: "btn btn-secondary custom-button" do %>
+            <i class="fa-solid fa-user-plus" style="font-size: 1.5rem; color: white;"></i> 
+        <% end %>
+      </div>
+      </div>
 
-</div>
-<div id="provinces">
-<div class="container custom-container ">
-<div id="<%=  @provinces %>">
-  <div class="table-responsive">
-    <table class="table table-striped table-bordered custom-table mt-4">
-  <thead class="table-dark">
-    <tr>
-  
-     <th scope="col" class="text-center">ID:</th>
-     <th scope="col">Name:</th>
-      <th scope="col">Territoires:</th>
-      <th scope="col">Map:</th>
-      <th scope="col">Montrer cette province:</th>
-      
-     
-      
-    </tr>
-  </thead>
-  <tbody>
-  <% @provinces.each_with_index  do |province,index|%>
-    <tr>
-      <td class="text-center"> <%=index + 1 %></td>
-      <td class="text-center"> <%=  province.name  %></td>
-      <td class="text-center"><%= province.territoires%></td>
-      <td class="text-center"> <%=  province.map %></td>
-       <td class="text-center"> <%= link_to "Montrer  #{province.name}", province  , class: "btn btn-sm btn-primary custom-button"%></td>
-      
-    </td>
-    </tr>
-  <%end%>
-  </tbody>
-</table>
-</div>
-</div>
-</div>
-
-
+    </div>
+    <div id="provinces">
+    <div class="container overflow-x-hidden ">
+        <div id="<%=  @provinces %>">
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered custom-table mt-4">
+                    <thead class="table-dark">
+                          <tr>
+                              <th scope="col" class="text-center">ID:</th>
+                              <th scope="col">Name:</th>
+                              <th scope="col">Territoires:</th>
+                              <th scope="col">Map:</th>  
+                          </tr>
+                    </thead>
+                    <tbody>
+                            <% @provinces.each_with_index  do |province,index|%>
+                              <tr class="contianer" onclick="window.location='<%= province_path(province) %>'" style="cursor: pointer;">
+                                <td class="text-center"> <%=index + 1 %></td>
+                                <td class="text-center"> <%=  province.name  %></td>
+                                <td class="text-center"><%= province.territoires%></td>
+                                <td class="text-center"> <%=  province.map %></td>    
+                              </td>
+                              </tr>
+                            <%end%>
+                    </tbody>
+                  </table>
+              </div>
+        </div>
+    </div>
 </div>
 
 
