@@ -51,7 +51,7 @@
                     <tbody>
                       <% @sponsors.each_with_index  do |sponsor,index|%>
                          <tr class="contianer" onclick="window.location='<%= sponsor_path(sponsor) %>'" style="cursor: pointer;">
-                           <td class="text-center"><%= index+1 %></td>
+                           <td class="text-center text-primary custom-font" style="text-decoration: underline;"><%= index+1 %></td>
                            <td class="text-center"><%= sponsor.first_name %></td>
                            <td class="text-center"><%= sponsor.last_name %></td>
                            <td class="text-center"><%= sponsor.phone %> </td>

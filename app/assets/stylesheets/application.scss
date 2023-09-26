@@ -103,10 +103,44 @@ background:#eee;
     position: relative;
   }
 
+  .custom-coulmn{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-img-div{
+    width: 100%;
+  }
+
+  .login-img{
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  .login-text-div{
+    width:100%;
+  }
 
 }
+@media(min-width: 768px){
+.login-img-div{
+  width:50%; 
+  max-height: fit-content;
+}
 
+.login-text-div{
+   width:50%;
+   height:100%;
+}
 
+.login-margin{
+  margin-top: 4rem;
+}
+
+section{
+  margin-left: 20px;
+}
+}
 .btn-icon-text {
   position: relative;
   text-decoration: none;
@@ -137,4 +171,34 @@ background:#eee;
 
 .btn-icon-text:hover .fa-icon::after {
   opacity: 1;
+}
+
+.row{
+  background: white;
+  border-radius: 30px;
+  box-shadow: 12px 12px 22px grey;
+}
+
+.login-img{
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  height: 100%;
+  width: auto;
+}
+
+.btn1{
+  border:none;
+  outline:none;
+  height:50px;
+  width: 100%;
+  background-color: #000;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn1:hover{
+  background:white;
+  border: 1px solid;
+  color: #000;
 }

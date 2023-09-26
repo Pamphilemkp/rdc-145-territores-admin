@@ -22,7 +22,6 @@
 
 
 </style>
-<p style="color: green"><%= notice %></p>
 <div class="container">
     <div class="d-flex flex-column gap-2 ">
           <div class="d-flex flex-column gap-5 ">
@@ -59,7 +58,7 @@
   <% @ambassadors.each_with_index do |ambassador, index| %>
     <tr class="contianer" onclick="window.location='<%= ambassador_path(ambassador) %>'" style="cursor: pointer;">
       
-      <td class="text-center "> <%=index + 1%></td>
+      <td class="text-center text-primary custom-font" style="text-decoration: underline;"> <%=index + 1%></td>
       <td class="text-center "> <%=ambassador.first_name %></td>
       <td class="text-center "><%=ambassador.last_name %></td>
       <td class="text-center "><%= ambassador.email %></td> 
