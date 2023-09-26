@@ -1,13 +1,19 @@
 <div class="container d-flex flex-column mt-3 custom-margin-form">
-    <div class="d-flex justify-content-end gap-1">
-      <%= link_to "Edit this province", edit_province_path(@province)  ,class: "btn btn-secondary custom-button"%> |
-      <%= link_to "Back to provinces", provinces_path  ,class: "btn btn-secondary custom-button"%>
+    <div class="d-flex justify-content-end gap-2" style="margin-right:20px;" >
+      <%= link_to  edit_province_path(@province), class: "btn btn-secondary custom-button btn-pencil btn-icon-text" do %>
+        <i class="fas fa-pencil-alt fa-icon"  data-text="Edit Province"></i> 
+      <% end %> |
+        <%= link_to provinces_path, class: "btn btn-secondary custom-button btn-icon-text" do %>
+        <i class="fas fa-arrow-left fa-icon" data-text="Go Back"></i> 
+      <% end %>
     </div>
     <div>
        <%= render @province %>
     </div>
     <div>
-      <%= button_to "Destroy this province", @province, method: :delete ,class: "btn btn-danger custom-button mt-4  float-end"%>
+      <%= button_to @province, method: :delete, class: "btn btn-danger custom-button mt-4 float-end btn-icon-text ",style:"margin-right:20px;" do %>
+        <i class="fas fa-trash-alt fa-icon"  data-text="Delete"></i> 
+      <% end %>
     </div>
 
 </div>

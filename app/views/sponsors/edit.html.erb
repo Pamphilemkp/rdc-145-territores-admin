@@ -1,11 +1,15 @@
 <div class="container d-flex flex-column custom-margin-form gap-2">
-<div >
-   <h1>Edit Sponsor</h1>
-</div>
-  <div class="d-flex justify-content-end">
-  <%= link_to "Show this sponsor", @sponsor,class: "btn btn-secondary custom-button" %> |
-    <%= link_to "Back to sponsors", sponsors_path, class: "btn btn-secondary custom-button"%>
-</div>
+    <div >
+      <h1>Edit Sponsor</h1>
+    </div>
+    <div class="d-flex justify-content-end gap-2" style="margin-right:20px;">
+      <%= link_to @sponsor , class: "btn btn-secondary custom-button btn-icon-text" do %>
+          <i class="fas fa-eye fa-icon" data-text="Show Sponsor "></i> 
+          <% end %>   |
+        <%= link_to sponsors_path, class: "btn btn-secondary custom-button btn-icon-text" do %>
+          <i class="fas fa-arrow-left fa-icon" data-text="Go Back"></i> 
+        <% end %>
+  </div>
 <div>
   <%= render "form", sponsor: @sponsor %>
 </div>

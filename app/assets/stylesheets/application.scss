@@ -105,3 +105,36 @@ background:#eee;
 
 
 }
+
+
+.btn-icon-text {
+  position: relative;
+  text-decoration: none;
+}
+
+.btn-icon-text .fa-icon {
+  position: relative;
+}
+
+.btn-icon-text .fa-icon::after {
+  content: attr(data-text); 
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  transform: translateX(-50%);
+  opacity: 0;
+  padding: 5px 10px;
+  background-color: rgb(230, 230, 91); 
+  color: #333;
+  border-radius: 5px;
+  transition: opacity 0.2s ease-in-out;
+  white-space: nowrap;
+  font-family: 'ubuntu', sans-serif;
+  font-weight: bold;
+  z-index: 1;
+  
+}
+
+.btn-icon-text:hover .fa-icon::after {
+  opacity: 1;
+}
