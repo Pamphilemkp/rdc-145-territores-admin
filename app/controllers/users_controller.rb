@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
   before_action :authenticate_devise_user!
+  load_and_authorize_resource
   # GET /users or /users.json
   def index
     @users = User.all
@@ -37,6 +38,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
+    
     respond_to do |format|
       if @user.update(user_params)
         DeviseUser.create(email: @user.email, password: params[:user][:password])
@@ -67,6 +69,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name,:email, :photo, :address, :phone,:password)
+      params.require(:user).permit(:first_name, :last_name,:email, :photo, :address, :phone,:password, :role)
     end
 end

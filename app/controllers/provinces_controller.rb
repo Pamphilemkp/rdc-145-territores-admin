@@ -1,6 +1,7 @@
 class ProvincesController < ApplicationController
   before_action :set_province, only: %i[ show edit update destroy ]
   before_action :authenticate_devise_user!
+  load_and_authorize_resource
   # GET /provinces or /provinces.json
   def index
     @provinces = Province.all

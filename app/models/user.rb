@@ -11,6 +11,12 @@ class User < ApplicationRecord
   validates :address, presence: true
   validates :phone, presence: true, length: { maximum: 20 }
   validate :photo_content_type
+  enum role: %i[user collaborator author admin]
+  after_initialize :set_default_role, if: :new_record?
+
+  def set_default_role
+    self.role ||= :user
+  end
 
   private
 

@@ -1,6 +1,7 @@
 class ParticipantsController < ApplicationController
   before_action :set_participant, only: %i[ show edit update destroy ]
   before_action :authenticate_devise_user!
+  load_and_authorize_resource
   # GET /participants or /participants.json
   def index
     @participants = Participant.all
