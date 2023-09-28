@@ -1,14 +1,14 @@
 
 <style>
-    /* Custom CSS for table and table cells */
+   
     .custom-table {
-        width: 100%; /* Set the width of the table as needed */
+        width: 100%; 
     }
 
     .custom-table th, .custom-table td {
-        width: 100px; /* Set the width of the table cells as needed */
-        height: 10px; /* Set the height of the table cells as needed */
-        overflow: hidden; /* Hide overflowing text */
+        width: 100px; 
+        height: 10px; 
+        overflow: hidden; 
         white-space: nowrap;
         font-family: 'ubuntu', sans-serif;
     }
@@ -51,7 +51,7 @@
                     <tbody>
                       <% @sponsors.each_with_index  do |sponsor,index|%>
                          <tr class="contianer" onclick="window.location='<%= sponsor_path(sponsor) %>'" style="cursor: pointer;">
-                           <td class="text-center"><%= index+1 %></td>
+                           <td class="text-center text-primary custom-font" style="text-decoration: underline;"><%= index+1 %></td>
                            <td class="text-center"><%= sponsor.first_name %></td>
                            <td class="text-center"><%= sponsor.last_name %></td>
                            <td class="text-center"><%= sponsor.phone %> </td>

@@ -103,5 +103,102 @@ background:#eee;
     position: relative;
   }
 
+  .custom-coulmn{
+    display: flex;
+    flex-direction: column;
+  }
 
+  .login-img-div{
+    width: 100%;
+  }
+
+  .login-img{
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  .login-text-div{
+    width:100%;
+  }
+
+}
+@media(min-width: 768px){
+.login-img-div{
+  width:50%; 
+  max-height: fit-content;
+}
+
+.login-text-div{
+   width:50%;
+   height:100%;
+}
+
+.login-margin{
+  margin-top: 4rem;
+}
+
+section{
+  margin-left: 20px;
+}
+}
+.btn-icon-text {
+  position: relative;
+  text-decoration: none;
+}
+
+.btn-icon-text .fa-icon {
+  position: relative;
+}
+
+.btn-icon-text .fa-icon::after {
+  content: attr(data-text); 
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  transform: translateX(-50%);
+  opacity: 0;
+  padding: 5px 10px;
+  background-color: rgb(230, 230, 91); 
+  color: #333;
+  border-radius: 5px;
+  transition: opacity 0.2s ease-in-out;
+  white-space: nowrap;
+  font-family: 'ubuntu', sans-serif;
+  font-weight: bold;
+  z-index: 1;
+  
+}
+
+.btn-icon-text:hover .fa-icon::after {
+  opacity: 1;
+}
+
+.row{
+  background: white;
+  border-radius: 30px;
+  box-shadow: 12px 12px 22px grey;
+}
+
+.login-img{
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  height: 100%;
+  width: auto;
+}
+
+.btn1{
+  border:none;
+  outline:none;
+  height:50px;
+  width: 100%;
+  background-color: #000;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn1:hover{
+  background:white;
+  border: 1px solid;
+  color: #000;
 }

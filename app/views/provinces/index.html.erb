@@ -61,7 +61,7 @@
                     <tbody>
                             <% @provinces.each_with_index  do |province,index|%>
                               <tr class="contianer" onclick="window.location='<%= province_path(province) %>'" style="cursor: pointer;">
-                                <td class="text-center"> <%=index + 1 %></td>
+                                <td class="text-center text-primary custom-font" style="text-decoration: underline;"> <%=index + 1 %></td>
                                 <td class="text-center"> <%=  province.name  %></td>
                                 <td class="text-center"><%= province.territoires%></td>
                                 <td class="text-center"> <%=  province.map %></td>    
