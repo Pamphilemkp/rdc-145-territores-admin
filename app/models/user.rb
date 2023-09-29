@@ -1,7 +1,10 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   mount_uploader :photo, PhotoUploader
-  include Trestle::Auth::ModelMethods
-  include Trestle::Auth::ModelMethods::Rememberable
+
   attribute :email, :string
   has_secure_password
   attr_accessor :remember_token, :remember_token_expires_at

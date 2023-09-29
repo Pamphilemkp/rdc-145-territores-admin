@@ -47,7 +47,9 @@
 </style>
 <div class="container ">
     <h1 class="sponsor-head custom-font "> Information sur l'ambassadeur</h1>
-    <div class="table-responsive overflow-x-hidden">
+    
+    <% if can?, @ambassador %>
+        <div class="table-responsive overflow-x-hidden">
         <table class="table table-striped table-bordered table-sm mt-4 custom-table">
             <tbody>
                 <tr>
@@ -108,4 +110,12 @@
             </tbody>
         </table>
     </div>
+        
+    <% else %>
+
+    <p>Vous n'avez pas le droit de lire ces informations<p>
+        
+    <% end %>
+    
+
 </div>

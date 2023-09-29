@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
   before_action :authenticate_devise_user!
-  load_and_authorize_resource
+  # load_and_authorize_resource
   # GET /users or /users.json
   def index
     @users = User.all
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        DeviseUser.create(email: @user.email, password: params[:user][:password])
+        # DeviseUser.create(email: @user.email, password: params[:user][:password])
         format.html { redirect_to user_url(@user), notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     
     respond_to do |format|
       if @user.update(user_params)
-        DeviseUser.create(email: @user.email, password: params[:user][:password])
+        # DeviseUser.create(email: @user.email, password: params[:user][:password])
         format.html { redirect_to user_url(@user), notice: "User was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   devise_for :devise_users
   
   resources :ambassadors do
@@ -11,5 +12,5 @@ Rails.application.routes.draw do
   resources :participants
   resources :sponsors
 
-  root  to: redirect('/admin')
+  root "ambassadors#index"
 end

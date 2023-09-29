@@ -1,34 +1,33 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # Define abilities for the user here. For example:
+    puts "User role: #{user&.role}" # Debug output
 
-  if user.role == 'admin'
-    can :manage, :all
+    return unless user.present?
 
-  elsif user.role == 'collaborator'
-   # users
-   can :read, User, user: user
-   can :update, User, user: user
-   # participants
-   can :read, Participant, user: user
-   can :update, Participant, user: user
-   # ambassadors
-   can :read, Ambassador, user: user
-   can :update, Ambassador, user: user
-   # provinces
-   can :read, Province, user: user
-   can :update, Province, user: user
-   # sponsors
-   can :read, User, user: user
-   can :update, User, user: user
-
-  else
-    can :read, User, user: user
-    can :update, User, user: user
-  end
+    if user.role == 'user'
+      can :read, User, id: user.id
+      can :update, User, id: user.id
+      can :read, Ambassador
+    elsif user.role == 'admin'
+      can :manage, :all
+    elsif user.role == 'collaborator'
+      can :read, User, id: user.id
+      can :update, User, id: user.id
+      can :read, Participant
+      can :update, Participant
+      can :read, Ambassador
+      can :update, Ambassador
+      can :read, Province
+      can :update, Province
+      can :read, Sponsor
+      can :update, Sponsor
+    else
+      can :read, User, id: user.id
+      can :update, User, id: user.id
+      can :read, Ambassador, user_id: user.id
+      can :update, Ambassador, user_id: user.id
+    end
   end
 end
