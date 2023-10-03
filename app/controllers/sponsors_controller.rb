@@ -1,6 +1,6 @@
 class SponsorsController < ApplicationController
   before_action :set_sponsor, only: %i[ show edit update destroy ]
-  before_action :authenticate_devise_user!
+  # before_action :authenticate_devise_user!
 
   # GET /sponsors or /sponsors.json
   def index
