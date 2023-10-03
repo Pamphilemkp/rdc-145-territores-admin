@@ -1,6 +1,6 @@
 class SponsorsController < ApplicationController
   before_action :set_sponsor, only: %i[ show edit update destroy ]
- 
+
 
   # GET /sponsors or /sponsors.json
   def index
