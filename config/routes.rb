@@ -11,6 +11,5 @@ Rails.application.routes.draw do
   resources :participants
   resources :sponsors
 
-  # root  'ambassadors#index'
   root  to: redirect('/devise_users/sign_in')
 end
