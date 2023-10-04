@@ -51,13 +51,23 @@
   </div>
 
   <div class="mb-3">
+    <%= form.label :email, class: "form-label" %>
+    <%= form.text_field :email, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
     <%= form.label :address, class: "form-label" %>
     <%= form.text_area :address, class: "form-control" %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :profession, class: "form-label" %>
-    <%= form.text_field :profession, class: "form-control" %>
+    <%= form.label :country_of_residence, class: "form-label" %>
+    <%= form.text_field :country_of_residence, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :proffession, class: "form-label" %>
+    <%= form.text_field :proffession, class: "form-control" %>
   </div>
 
   <div class="mb-3">
@@ -76,8 +86,8 @@
   </div>
 
   <div class="mb-3">
-    <%= form.label :professional_experience, class: "form-label" %>
-    <%= form.text_field :professional_experience, class: "form-control" %>
+    <%= form.label :proffessional_experience, class: "form-label" %>
+    <%= form.text_field :proffessional_experience, class: "form-control" %>
   </div>
 
   <div class="mb-3">
