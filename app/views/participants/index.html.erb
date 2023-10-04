@@ -57,10 +57,18 @@
               <tbody>
                 <% @participants.each_with_index do |participant,index|%>
                   <tr class="contianer" onclick="window.location='<%= participant_path(participant) %>'" style="cursor: pointer;">
+                   
                     <td class="text-center text-primary custom-font" style="text-decoration: underline;"> <%=index + 1%></td>
+                    
                     <td class="text-center"> <%= participant.first_name %></td>
+                    
                     <td class="text-center"><%=participant.last_name %></td>
-                    <td class="text-center"> <%= participant.province_of_interest %> </td>
+                    
+                    <td class="text-center"> 
+                            <% participant.province_of_interest.each do |item| %>
+                            # -  <%=item.values[0]  %> <br /> 
+                            <% end %>
+                    </td>
                   </tr>
                 <%end%>
               </tbody>

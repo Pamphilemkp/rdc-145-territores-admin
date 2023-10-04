@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_04_142604) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_04_164110) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,15 +50,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_04_142604) do
     t.string "proffession"
     t.text "investment_idea"
     t.string "impact_of_idea"
-    t.string "sector_of_investment"
     t.string "proffessional_experience"
     t.text "summary_of_project"
-    t.string "province_of_interest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
     t.string "country_of_residence"
     t.string "phone"
+    t.jsonb "sector_of_investment", default: {}
+    t.jsonb "province_of_interest", default: []
   end
 
   create_table "provinces", force: :cascade do |t|

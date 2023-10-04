@@ -71,7 +71,7 @@
                 </tr>
                 
                 <tr>
-                  <td class="custom-font">Sector of investment:</td>
+                  <td class="custom-font">Idea of investment:</td>
                   <td class="address text-wrap"><%= participant.investment_idea %></td>
                 </tr>
                 <tr>
@@ -80,7 +80,7 @@
                 </tr>
                 <tr>
                   <td class="custom-font">Sector of investment:</td>
-                  <td class="address text-wrap"><%=participant.sector_of_investment%></td>
+                  <td class="address text-wrap"><%=participant.sector_of_investment.values[0] %></td>
                 </tr>
                 <tr>
                   <td class="custom-font">Proffessional experience:</td>
@@ -92,7 +92,11 @@
                 </tr>
                 <tr>
                   <td class="custom-font">Province of interest:</td>
-                  <td class="address text-wrap"><%= participant.province_of_interest %></td>
+                  <td class="address text-wrap">
+                    <% participant.province_of_interest.each do |item| %>
+                     # -  <%=item.values[0]  %> <br /> 
+                    <% end %>
+                  </td>
                 </tr>
             </tbody>
         </table>
