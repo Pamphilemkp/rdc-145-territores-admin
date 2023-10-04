@@ -51,6 +51,11 @@
   </div>
 
   <div class="mb-3">
+    <%= form.label :receipt, 'Numéro de votre réçu de payment' class: "form-label" %>
+    <%= form.text_field :receipt, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
     <%= form.label :email, class: "form-label" %>
     <%= form.text_field :email, class: "form-control" %>
   </div>
