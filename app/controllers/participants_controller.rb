@@ -65,6 +65,6 @@ class ParticipantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def participant_params
-      params.require(:participant).permit(:first_name, :last_name, :address, :proffession, :investment_idea, :impact_of_idea, :sector_of_investment, :proffessional_experience, :summary_of_project, :province_of_interest,  :address, :email, :country_of_residence)
+      params.require(:participant).permit(:first_name, :last_name, :address, :proffession, :investment_idea, :impact_of_idea, :sector_of_investment, :proffessional_experience, :summary_of_project, :province_of_interest,  :address, :email, :country_of_residence, :phone)
     end
 end
