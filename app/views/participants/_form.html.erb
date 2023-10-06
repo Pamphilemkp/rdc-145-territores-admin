@@ -85,10 +85,31 @@
     <%= form.text_field :impact_of_idea, class: "form-control" %>
   </div>
 
-  <div class="mb-3">
-    <%= form.label :sector_of_investment, class: "form-label" %>
-    <%= form.text_field :sector_of_investment, class: "form-control" %>
-  </div>
+
+    <div class="mb-3">
+      <%= form.label :sector_of_investment, class: "form-label" %>
+      <%= form.select :sector_of_investment,
+        options_for_select(
+          [
+            ["Mines", "Mines"],
+            ["Energie", "Energie"],
+            ["Transport", "Transport"],
+            ["Télécommunication", "Télécommunication"],
+            ["Tourisme", "Tourisme"],
+            ["Santé", "Santé"],
+            ["Industrie et transformation locale", "Industrie et transformation locale"],
+            ["Numérique", "Numérique"],
+            ["Infrastructures", "Infrastructures"],
+            ["Assurances", "Assurances"],
+            ["Agriculture, Agroalimentaire", "Agriculture, Agroalimentaire"],
+            ["Autres", "Autres"]
+          ],
+          selected: @participant.sector_of_investment || "", # Set the selected value or default to an empty string
+          include_blank: "Select Sector of Investment",
+          class: "form-control"
+        )
+      %>
+    </div>
 
   <div class="mb-3">
     <%= form.label :proffessional_experience, class: "form-label" %>
@@ -100,10 +121,49 @@
     <%= form.text_area :summary_of_project, class: "form-control" %>
   </div>
 
+ 
+
   <div class="mb-3">
-    <%= form.label :province_of_interest, class: "form-label" %>
-    <%= form.text_field :province_of_interest, class: "form-control" %>
-  </div>
+      <%= form.label :province_of_interest, class: "form-label" %>
+      <%= form.select :province_of_interest,
+        options_for_select(
+          [
+            ["Haut-Katanga", "Haut-Katanga"],
+            ["Kinshasa", "Kinshasa"],
+            ["Kongo Central", "Kongo Central"],
+            ["Kwango", "Kwango"],
+            ["Kwilu", "Kwilu"],
+            ["Mai-Ndombe", "Mai-Ndombe"],
+            ["Kasaï", "Kasaï"],
+            ["Kasaï-Central", "Kasaï-Central"],
+            ["Kasaï-Oriental", "Kasaï-Oriental"],
+            ["Lomami", "Lomami"],
+            ["Sankuru", "Sankuru"],
+            ["Maniema", "Maniema"],
+            ["Sud Kivu", "Sud Kivu"],
+            ["Nord Kivu", "Nord Kivu"],
+            ["Ituri", "Ituri"],
+            ["Haut-Uele", "Haut-Uele"],
+            ["Tshopo", "Tshopo"],
+            ["Bas-Uele", "Bas-Uele"],
+            ["Nord-Ubangi", "Nord-Ubangi"],
+            ["Mongala", "Mongala"],
+            ["Sud-Ubangi", "Sud-Ubangi"],
+            ["Équateur", "Équateur"],
+            ["Tshuapa", "Tshuapa"],
+            ["Tanganyika", "Tanganyika"],
+            ["Haut-Lomami", "Haut-Lomami"],
+            ["Lualaba", "Lualaba"]
+          ],
+          selected: @participant.province_of_interest || [], # Set the selected values or default to an empty array
+          include_blank: "Select Province of Interest",
+          multiple: true,
+          class: "form-control selectpicker",
+          data: { style: 'btn-secondary' }
+        )
+      %>
+    </div>
+
 
   <div class="mt-3 submit-font ">
     <%= form.submit "Submit", class: "btn btn-secondary float-end" %>

@@ -13,6 +13,8 @@ class ParticipantsController < ApplicationController
   # GET /participants/new
   def new
     @participant = Participant.new
+    @participant.sector_of_investment = { value: "", label: "" } # Initialize as empty
+    @participant.province_of_interest = [] # Initialize as an empty array
   end
 
   # GET /participants/1/edit

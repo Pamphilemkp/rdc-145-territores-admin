@@ -12,6 +12,7 @@ module Rdc145TerritoresAdmin
     config.load_defaults 7.0
     config.action_controller.default_protect_from_forgery = false
 
+
     # Configuration for the application, engines, and railties goes here.
     config.middleware.use ActionDispatch::Flash
     config.middleware.insert_before 0, Rack::Cors do
