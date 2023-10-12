@@ -42,15 +42,16 @@
 
 
 <div id="<%= dom_id speaker %>">
-  <h1 class="sponsor-head custom-font">User Information</h1>
+  <h1 class="sponsor-head custom-font">Speaker Information</h1>
   <div class="table-responsive overflow-x-hidden">
       <table class="table table-striped table-bordered table-sm mt-4 custom-table">
             <tbody>
               <tr>
                 <td class="custom-font">Photo:</td>
-                <td>
-                  <%= image_tag speaker.photo, class: "img-thumbnail rounded-circle", style: "max-height: 50px; max-width: 50px;"  %>
-                </td> 
+                <td ><% if speaker.photo? %>
+                        <%= image_tag speaker.photo_url, class: "img-thumbnail rounded-circle", style: "max-height: 50px; max-width: 50px;" %>
+                    <% end %>
+                </td>
               </tr>
 
               <tr>
