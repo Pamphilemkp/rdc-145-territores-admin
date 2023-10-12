@@ -1,0 +1,124 @@
+<style>
+    .custom-table {
+        width: 100%;
+    }
+
+    .custom-table th, .custom-table td {
+        white-space: nowrap;
+    }
+
+    .sponsor-head {
+        margin-top: 10px;
+        color: #333;
+    }
+
+    /* Add responsive styles for smaller screens */
+    @media (max-width: 767px) {
+        .custom-table th,
+        .custom-table td {
+            width: auto; 
+            text-align: left; 
+            border-bottom: 1px solid #eee;
+            padding: 5px;
+            overflow: hidden;
+            display: block; 
+        }
+
+      
+        .custom-table td::before {
+            content: attr(data-label);
+            font-weight: bold;
+            display: block;
+        }
+
+       
+        .custom-table td.address {
+            white-space: nowrap;
+            text-overflow: ellipsis; 
+            overflow: hidden;
+        }  
+    }
+</style>
+
+
+<div id="<%= dom_id speaker %>">
+  <h1 class="sponsor-head custom-font">Speaker Information</h1>
+  <div class="table-responsive overflow-x-hidden">
+      <table class="table table-striped table-bordered table-sm mt-4 custom-table">
+            <tbody>
+              <tr>
+                <td class="custom-font">Photo:</td>
+                <td ><% if speaker.photo? %>
+                        <%= image_tag speaker.photo_url, class: "img-thumbnail rounded-circle", style: "max-height: 50px; max-width: 50px;" %>
+                    <% end %>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="custom-font">First name:</td>
+                <td><%= speaker.first_name %></td>
+              </tr>
+
+              <tr>
+                <td class="custom-font">Last name:</td>
+                <td><%= speaker.last_name %></td>
+              </tr>
+
+              <tr>
+                <td class="custom-font">Presentation:</td>
+                <td><%= speaker.presentation %></td>
+              </tr>
+
+              <tr>
+                <td class="custom-font">Email:</td>
+                <td><%= speaker.email %></td>
+              </tr>
+
+              <tr>
+                <td class="custom-font">Phone:</td>
+                <td><%= speaker.phone %></td>    
+              </tr>
+
+              <tr>
+                <td class="custom-font">Address:</td>
+                <td><%= speaker.address %></td>
+              </tr>
+
+              <tr>
+                <td class="custom-font">Citizenship:</td>
+                <td><%= speaker.citizenship %></td>  
+              </tr>
+
+              <tr>
+                <td class="custom-font">Biography:</td>
+                <td><%= speaker.biography %></td>
+              </tr>
+
+              <tr>
+              <td class="custom-font">Occupation:</td>
+                <td><%= speaker.occupation %></td> 
+              </tr>
+
+              <tr>
+                <td class="custom-font">Feedback:</td>
+                <td><%= speaker.feedback %></td>
+              </tr>
+
+              <tr>
+                <td class="custom-font">Hear about us:</td>
+                <td><%= speaker.hear_about_us %></td>
+              </tr>
+
+              <tr>
+                <td class="custom-font">Created at:</td>
+                <td><%= speaker.created_at %></td>
+              </tr>
+
+              <tr>
+                <td class="custom-font">Updated at:</td>
+                <td><%= speaker.updated_at %></td>
+              </tr>
+            </tbody>
+      </table>
+  </div>
+</div>
