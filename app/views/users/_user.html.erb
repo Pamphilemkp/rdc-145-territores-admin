@@ -68,10 +68,21 @@
                   <td class="custom-font address">Address:</td>
                     <td class="address text-wrap"><%= user.address %></td>
                 </tr>
+
                 <tr>
-                <td class="custom-font">Phone:</td>
+                    <td class="custom-font">Phone:</td>
                     <td ><%= user.phone %></td>
                 </tr>
+
+                <tr>
+                <td class="custom-font">Created at:</td>
+                <td><%= user.created_at %></td>
+              </tr>
+
+              <tr>
+                <td class="custom-font">Updated at:</td>
+                <td><%= user.updated_at %></td>
+              </tr>
             </tbody>
         </table>
     </div>

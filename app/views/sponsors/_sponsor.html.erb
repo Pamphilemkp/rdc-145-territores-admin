@@ -90,9 +90,7 @@
                 <tr>
                     <td class="custom-font" >Type of sponsorship offering:</td>
                     <td ><%= sponsor.type_of_sponsorship_offering %></td>
-                </tr>
-
-                
+                </tr> 
 
                 <tr>
                    <td class="custom-font">Numéro du réçu de payment</td>
@@ -103,6 +101,16 @@
                     <td class="custom-font" >Feedback:</td>
                     <td ><%= sponsor.feedback %></td>
                 </tr>
+
+                              <tr>
+                <td class="custom-font">Created at:</td>
+                <td><%= sponsor.created_at %></td>
+              </tr>
+
+              <tr>
+                <td class="custom-font">Updated at:</td>
+                <td><%= sponsor.updated_at %></td>
+              </tr>
             </tbody>
         </table>
         

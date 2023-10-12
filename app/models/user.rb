@@ -15,8 +15,8 @@ class User < ApplicationRecord
   private
 
   def photo_content_type
-    if photo.present? && !photo.content_type.in?(%w(image/jpeg image/png))
-      errors.add(:photo, "must be a valid JPEG or PNG image")
+    if photo.present? && !photo.content_type.in?(%w(image/svg+xml image/jpeg image/jpg image/webm))
+      errors.add(:photo, "must be a valid JPEG ,PNG,SVG,jpg and webm image")
     end
   end
 end

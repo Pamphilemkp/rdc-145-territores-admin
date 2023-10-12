@@ -1,0 +1,11 @@
+<div class="d-flex flex-column   container">
+  <div>
+      <h1>New speaker</h1>
+  </div>
+  <div class="d-flex justify-content-end">
+    <%= link_to "Back to speakers", speakers_path , class: "btn btn-secondary custom-button"%>
+  </div>
+  <div>
+     <%= render "form", speaker: @speaker %>
+  </div>
+</div>

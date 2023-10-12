@@ -1,0 +1,20 @@
+
+<div class="container d-flex flex-column gap-2 custom-margin-form">
+    <div >
+      <h1>Editing speaker</h1>
+    </div>
+    <div class="d-flex justify-content-end gap-2" style="margin-right:20px;">
+      <%= link_to @speaker, class: "btn btn-secondary custom-button btn-icon-text" do %>
+        <i class="fas fa-eye fa-icon" data-text="Show speaker "></i> 
+         <span class="d-md-none">Show This speaker</span> 
+      <% end %>   |
+      <%= link_to speakers_path, class: "btn btn-secondary custom-button btn-icon-text" do %>
+        <i class="fas fa-arrow-left fa-icon" data-text="Go Back"></i>
+         <span class="d-md-none">Back To speaker</span>  
+      <% end %>
+    </div>
+<div>
+  <%= render "form", speaker: @speaker %>
+</div>
+</div>
+

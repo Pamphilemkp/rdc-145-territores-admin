@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_04_201229) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_12_120357) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -69,6 +69,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_04_201229) do
     t.string "superficie"
     t.text "territoires"
     t.string "map"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "speakers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "presentation"
+    t.string "email"
+    t.string "phone"
+    t.text "address"
+    t.string "citizenship"
+    t.text "biography"
+    t.string "occupation"
+    t.text "feedback"
+    t.string "hear_about_us"
+    t.binary "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
