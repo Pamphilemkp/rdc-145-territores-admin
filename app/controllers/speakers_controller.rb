@@ -4,6 +4,10 @@ class SpeakersController < ApplicationController
   # GET /speakers or /speakers.json
   def index
     @speakers = Speaker.all
+    respond_to do |format|
+      format.html { render } # Render the HTML view (this is the default behavior)
+      format.json { render json: @speakers } # Render JSON data
+    end
   end
 
   # GET /speakers/1 or /speakers/1.json
@@ -33,6 +37,7 @@ class SpeakersController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /speakers/1 or /speakers/1.json
   def update

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :speakers
+
   devise_for :devise_users
   
   resources :ambassadors do
@@ -11,6 +12,6 @@ Rails.application.routes.draw do
   resources :users
   resources :participants
   resources :sponsors
-
+ 
   root  to: redirect('/devise_users/sign_in')
 end
