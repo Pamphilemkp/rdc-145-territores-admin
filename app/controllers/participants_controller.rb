@@ -1,5 +1,6 @@
 class ParticipantsController < ApplicationController
   before_action :set_participant, only: %i[ show edit update destroy ]
+  before_action :set_option_list, only: [:new, :edit]
 
   # GET /participants or /participants.json
   def index
@@ -12,6 +13,37 @@ class ParticipantsController < ApplicationController
 
   # GET /participants/new
   def new
+    @optionList = [
+      {value: "Haut-Katanga", label: "Haut-Katanga"},
+      {value: "Kinshasa", label: "Kinshasa"},
+      {value: "Kongo Central", label: "Kongo Central"},
+      {value: "Kwango", label: "Kwango"},
+      {value: "Kwilu", label: "Kwilu"},
+      {value: "Mai-Ndombe", label: "Mai-Ndombe"},
+      {value: "Kasaï", label: "Kasaï"},
+      {value: "Kasaï-Central", label: "Kasaï-Central"},
+      {value: "Kasaï-Oriental", label: "Kasaï-Oriental"},
+      {value: "Lomami", label: "Lomami"},
+      {value: "Sankuru", label: "Sankuru"},
+      {value: "Maniema", label: "Maniema"},
+      {value: "Sud Kivu", label: "Sud Kivu"},
+      {value: "Nord Kivu", label: "Nord Kivu"},
+      {value: "Ituri", label: "Ituri"},
+      {value: "Haut-Uele", label: "Haut-Uele"},
+      {value: "Tshopo", label: "Tshopo"},
+      {value: "Bas-Uele", label: "Bas-Uele"},
+      {value: "Nord-Ubangi", label: "Nord-Ubangi"},
+      {value: "Mongala", label: "Mongala"},
+      {value: "Sud-Ubangi", label: "Sud-Ubangi"},
+      {value: "Équateur", label: "Équateur"},
+      {value: "Tshuapa", label: "Tshuapa"},
+      {value: "Tanganyika", label: "Tanganyika"},
+      {value: "Haut-Lomami", label: "Haut-Lomami"},
+      {value: "Lualaba", label: "Lualaba"},
+  
+  ]
+
+  puts "@optionList: #{@optionList.inspect}"
     @participant = Participant.new
   end
 
@@ -73,4 +105,37 @@ class ParticipantsController < ApplicationController
         province_of_interest: [:value, :label]
       )
     end
+
+    
+  def set_option_list
+    @optionList = [
+      {value: "Haut-Katanga", label: "Haut-Katanga"},
+      {value: "Kinshasa", label: "Kinshasa"},
+      {value: "Kongo Central", label: "Kongo Central"},
+      {value: "Kwango", label: "Kwango"},
+      {value: "Kwilu", label: "Kwilu"},
+      {value: "Mai-Ndombe", label: "Mai-Ndombe"},
+      {value: "Kasaï", label: "Kasaï"},
+      {value: "Kasaï-Central", label: "Kasaï-Central"},
+      {value: "Kasaï-Oriental", label: "Kasaï-Oriental"},
+      {value: "Lomami", label: "Lomami"},
+      {value: "Sankuru", label: "Sankuru"},
+      {value: "Maniema", label: "Maniema"},
+      {value: "Sud Kivu", label: "Sud Kivu"},
+      {value: "Nord Kivu", label: "Nord Kivu"},
+      {value: "Ituri", label: "Ituri"},
+      {value: "Haut-Uele", label: "Haut-Uele"},
+      {value: "Tshopo", label: "Tshopo"},
+      {value: "Bas-Uele", label: "Bas-Uele"},
+      {value: "Nord-Ubangi", label: "Nord-Ubangi"},
+      {value: "Mongala", label: "Mongala"},
+      {value: "Sud-Ubangi", label: "Sud-Ubangi"},
+      {value: "Équateur", label: "Équateur"},
+      {value: "Tshuapa", label: "Tshuapa"},
+      {value: "Tanganyika", label: "Tanganyika"},
+      {value: "Haut-Lomami", label: "Haut-Lomami"},
+      {value: "Lualaba", label: "Lualaba"},
+  
+  ]
+  end
 end
