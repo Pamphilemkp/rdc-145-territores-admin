@@ -52,7 +52,7 @@ class ProvincesController < ApplicationController
     @province.destroy
 
     respond_to do |format|
-      format.html { redirect_to provinces_url, notice: "Province was successfully destroyed." }
+      format.html { redirect_to provinces_url,status: :see_other, notice: "Province was successfully destroyed." }
       format.json { head :no_content }
     end
   end

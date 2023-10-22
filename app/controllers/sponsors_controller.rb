@@ -54,7 +54,7 @@ class SponsorsController < ApplicationController
     @sponsor.destroy
 
     respond_to do |format|
-      format.html { redirect_to sponsors_url, notice: "Sponsor was successfully destroyed." }
+      format.html { redirect_to sponsors_url,status: :see_other, notice: "Sponsor was successfully destroyed." }
       format.json { head :no_content }
     end
   end

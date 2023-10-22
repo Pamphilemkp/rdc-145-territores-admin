@@ -57,7 +57,7 @@ class SpeakersController < ApplicationController
     @speaker.destroy
 
     respond_to do |format|
-      format.html { redirect_to speakers_url, notice: "Speaker was successfully destroyed." }
+      format.html { redirect_to speakers_url, status: :see_other,notice: "Speaker was successfully destroyed." }
       format.json { head :no_content }
     end
   end
