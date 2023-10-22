@@ -52,7 +52,7 @@ class AmbassadorsController < ApplicationController
     @ambassador.destroy
 
     respond_to do |format|
-      format.html { redirect_to ambassadors_url, notice: "Ambassador was successfully destroyed." }
+      format.html { redirect_to ambassadors_url,status: :see_other, notice: "Ambassador was successfully destroyed." }
       format.json { head :no_content }
     end
   end

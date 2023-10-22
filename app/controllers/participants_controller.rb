@@ -52,7 +52,7 @@ class ParticipantsController < ApplicationController
     @participant.destroy
 
     respond_to do |format|
-      format.html { redirect_to participants_url, notice: "Participant was successfully destroyed." }
+      format.html { redirect_to participants_url, status: :see_other,notice: "Participant was successfully destroyed." }
       format.json { head :no_content }
     end
   end
