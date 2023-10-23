@@ -6,8 +6,8 @@ class Ambassador < ApplicationRecord
   validates :phone, presence: true, length: { maximum: 20 }
   validates :address, presence: true
   validates :citizenship, presence: true, length: { maximum: 50 }
-  validates :presentation, presence: true, length: { maximum: 255 }
+  validates :presentation, presence: true, length: { maximum: 999 }
   validates :position, presence: true, length: { maximum: 50 }
-  validates :reason_of_choice, presence: true, length: { maximum: 255 }
+  validates :reason_of_choice, presence: true, length: { maximum: 999 }
   validates :territoire, presence: true, length: { maximum: 50 }
 end
