@@ -78,3 +78,5 @@ end
 gem 'rack-cors'
 gem 'trestle'
 gem 'trestle-auth'
+
+gem "pundit", "~> 2.3"

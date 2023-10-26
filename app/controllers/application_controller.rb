@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :custom_authentication
+  include Pundit::Authorization
 
   private
 
